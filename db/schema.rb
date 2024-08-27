@@ -10,9 +10,49 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_08_27_110156) do
+ActiveRecord::Schema[7.1].define(version: 2024_08_27_140513) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "follows", force: :cascade do |t|
+    t.bigint "follower_id", null: false
+    t.bigint "followed_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["followed_id"], name: "index_follows_on_followed_id"
+    t.index ["follower_id"], name: "index_follows_on_follower_id"
+  end
+
+  create_table "likes", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.bigint "recommendation_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.boolean "status", default: false
+    t.index ["recommendation_id"], name: "index_likes_on_recommendation_id"
+    t.index ["user_id"], name: "index_likes_on_user_id"
+  end
+
+  create_table "recommendations", force: :cascade do |t|
+    t.text "content"
+    t.string "tags"
+    t.string "photos"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "user_id", null: false
+    t.bigint "restaurant_id", null: false
+    t.index ["restaurant_id"], name: "index_recommendations_on_restaurant_id"
+    t.index ["user_id"], name: "index_recommendations_on_user_id"
+  end
+
+  create_table "restaurants", force: :cascade do |t|
+    t.string "name"
+    t.string "location"
+    t.string "url"
+    t.string "photos"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -31,4 +71,21 @@ ActiveRecord::Schema[7.1].define(version: 2024_08_27_110156) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  create_table "wishlists", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.bigint "restaurant_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["restaurant_id"], name: "index_wishlists_on_restaurant_id"
+    t.index ["user_id"], name: "index_wishlists_on_user_id"
+  end
+
+  add_foreign_key "follows", "users", column: "followed_id"
+  add_foreign_key "follows", "users", column: "follower_id"
+  add_foreign_key "likes", "recommendations"
+  add_foreign_key "likes", "users"
+  add_foreign_key "recommendations", "restaurants"
+  add_foreign_key "recommendations", "users"
+  add_foreign_key "wishlists", "restaurants"
+  add_foreign_key "wishlists", "users"
 end

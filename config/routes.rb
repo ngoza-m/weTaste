@@ -9,4 +9,19 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "posts#index"
+
+  resources :restaurants, only: [:index, :show] do
+    resources :recommendations, only: [:index, :create, :new]
+    resources :wishlists, only: [:create]
+  end
+
+  resources :recommendations, only: [:index, :edit, :update, :destroy] do 
+    resources :likes, only: [:create, :destroy]
+  end
+
+  resources :follows, only: [:create, :destroy]
+  resources :wishlists, only: [:show]
 end
+# POST restaurants/:id/recommendations/:id/like 
+# POST /recommendations/:id/like 
+# POST /restaurants/:id/whishlist
