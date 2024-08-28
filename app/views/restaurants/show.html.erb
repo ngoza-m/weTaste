@@ -1,0 +1,23 @@
+<h2><%= @restaurant.name %></h2>
+<p><%= @restaurant.location %></p>
+
+
+
+<% wishlist = current_user.wishlists.find_by(restaurant_id: @restaurant.id) %>
+
+
+<% if wishlist %>
+
+    <p> You have already wishlisted this restaurant </p>
+    <%= link_to "Remove from Wishlist", restaurant_wishlist_path(@restaurant, wishlist), 
+    data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
+<% else %>
+    <%= simple_form_for [@restaurant, @wishlist] do |f| %>
+        <%= f.submit "Add to Wishlist", class: "btn btn-primary mb-3" %>
+    <% end %>
+<% end %>    
+
+<p> ❤️ <%= Wishlist.count %> wishlisted </p>
+
+
+

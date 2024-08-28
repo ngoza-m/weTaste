@@ -9,10 +9,11 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "posts#index"
+  get "profile", to: "pages#profile"
 
   resources :restaurants, only: [:index, :show] do
     resources :recommendations, only: [:index, :create, :new]
-    resources :wishlists, only: [:create]
+    resources :wishlists, only: [:create, :destroy]
   end
 
   resources :recommendations, only: [:index, :edit, :update, :destroy] do 
