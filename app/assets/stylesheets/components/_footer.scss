@@ -1,0 +1,34 @@
+
+ul.footer {
+  color: blue;
+}
+
+.footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: space-around;
+  list-style-type: none;
+  padding: 10px;
+  margin: 0;
+  background-color: #6a497a;
+}
+
+.footer li {
+  display: flex;
+  flex-direction: column;
+  align-items: center;  
+  text-align: center;
+  color: white;
+}
+
+.footer i {
+  font-size: 1.5em;
+  margin-bottom: 5px;
+}
+
+.footer span {
+  font-size: 0.9em;
+}
