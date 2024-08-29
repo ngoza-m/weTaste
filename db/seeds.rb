@@ -137,4 +137,3 @@ Restaurant.create([
   }
 
   ])
-  puts "Created 17 new restaurants"
