@@ -79,3 +79,5 @@ end
 #INSTALLED GEMS
 
 gem "devise"
+gem "cloudinary"
+

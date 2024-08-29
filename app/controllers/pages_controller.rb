@@ -9,4 +9,10 @@ class PagesController < ApplicationController
     @user = current_user
     
   end
+
+  def wishlist
+    @wishlisted_restaurants = current_user.restaurants
+    
+  end
+
 end

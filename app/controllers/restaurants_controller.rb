@@ -8,6 +8,8 @@ class RestaurantsController < ApplicationController
     def show
         @restaurant = Restaurant.find(params[:id])
         @wishlist = Wishlist.new
+        @recommendation = Recommendation.new
+        @recommendations = @restaurant.recommendations
     end
 
 end

@@ -3,21 +3,38 @@
 
 
 
-<% wishlist = current_user.wishlists.find_by(restaurant_id: @restaurant.id) %>
+<% user_wishlists = current_user.wishlists %>
 
+<% wishlist = user_wishlists.find_by(restaurant_id: @restaurant.id) %>
 
 <% if wishlist %>
-
-    <p> You have already wishlisted this restaurant </p>
-    <%= link_to "Remove from Wishlist", restaurant_wishlist_path(@restaurant, wishlist), 
-    data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
+  <%= button_to "Remove from Wishlist", restaurant_wishlist_path(@restaurant, wishlist), method: :delete, class: "btn btn-danger mb-3" %>
 <% else %>
-    <%= simple_form_for [@restaurant, @wishlist] do |f| %>
-        <%= f.submit "Add to Wishlist", class: "btn btn-primary mb-3" %>
-    <% end %>
-<% end %>    
+  <%= simple_form_for [@restaurant, @wishlist] do |f| %>
+    <%= f.submit "Add to Wishlist", class: "btn btn-primary mb-3" %>
+  <% end %>
+<% end %>
 
-<p> ❤️ <%= Wishlist.count %> wishlisted </p>
+<%= link_to "Add a Recommendation", new_restaurant_recommendation_path(@restaurant, @recommendation), class: "btn btn-primary mb-3"   %>
+        
+
+
+<p> ❤️ <%= Wishlist.where(restaurant_id: @restaurant.id).count %> wishlisted </p>
+
+<h2> Recommendations </h2>
+<% if @recommendations.empty? %>
+  <p> No recommendations yet </p>
+<% else %>
+  <% @recommendations.each do |recommendation| %>
+    <p> <%= recommendation.content %> </p>
+    <p> <%= recommendation.user.email %> </p>
+    <% if recommendation.photos.attached? %>
+      <% recommendation.photos.each do |photo| %>
+        <%= image_tag photo %>
+      <% end %>
+    <% end %>
+  <% end %>
+<% end %>
 
 
 

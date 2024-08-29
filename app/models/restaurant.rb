@@ -1,4 +1,4 @@
 class Restaurant < ApplicationRecord
-    has_many :recommendations, dependent: :destroy
+    has_many :recommendations
     has_many :wishlists
 end

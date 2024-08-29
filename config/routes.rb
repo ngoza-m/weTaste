@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   # root "posts#index"
   get "profile", to: "pages#profile"
+  get "wishlist", to: "pages#wishlist"
 
   resources :restaurants, only: [:index, :show] do
     resources :recommendations, only: [:index, :create, :new]
@@ -21,7 +22,7 @@ Rails.application.routes.draw do
   end
 
   resources :follows, only: [:create, :destroy]
-  resources :wishlists, only: [:show]
+  resources :wishlists, only: [:destroy]
 end
 # POST restaurants/:id/recommendations/:id/like 
 # POST /recommendations/:id/like 
