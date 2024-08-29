@@ -7,52 +7,61 @@
 #   ["Action", "Comedy", "Drama", "Horror"].each do |genre_name|
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
+puts "Destroying old restaurants"
+Restaurant.destroy_all
 
-
+puts "Creating new restaurants"
 Restaurant.create([
   {
     name: "Franggo De Pijp",
     location: "Eerste Sweelinckstraat 9h",
     url: "https://www.franggo.nl",
-    photos: "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/19/19/9f/2c/restaurant-1eklas.jpg?w=600&h=-1&s=1"
+    photos: "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/19/19/9f/2c/restaurant-1eklas.jpg?w=600&h=-1&s=1",
+    phone_number: "020 303 1046"
   },
   {
     name: "Dignita Vondelpark",
     location: "Koninginneweg 218",
     url: "https://eatwelldogood.nl",
-    photos: "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/08/a1/5f/05/dignita.jpg?w=2000&h=-1&s=1"
+    photos: "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/08/a1/5f/05/dignita.jpg?w=2000&h=-1&s=1",
+    phone_number: "020 221 458"
   },
   {
     name: "Vinkeles",
     location: "Keizersgracht 384",
     url: "https://www.vinkeles.com",
-    photos: "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/2a/1d/68/23/interior-restaurant-vinkeles.jpg?w=1400&h=-1&s=1"
+    photos: "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/2a/1d/68/23/interior-restaurant-vinkeles.jpg?w=1400&h=-1&s=1",
+    phone_number: "020 530 2010"
   },
   {
     name: "Ciel Bleu Restaurant",
     location: "Ferdinand Bolstraat 333",
     url: "https://www.cielbleu.nl",
-    photos: "https://lh3.googleusercontent.com/p/AF1QipM3slhyjQN0j0nLqkbkNfqnO7vG8asWPWOMPY6D=s1360-w1360-h1020"
+    photos: "https://lh3.googleusercontent.com/p/AF1QipM3slhyjQN0j0nLqkbkNfqnO7vG8asWPWOMPY6D=s1360-w1360-h1020",
+    phone_number: "020 678 7450"
   },
   {
     name: "Dimitri's Restaurant",
     location: "Insulindeweg 1",
     url: "https://www.dimitris.amsterdam/",
-    photos: "https://lh3.googleusercontent.com/p/AF1QipOJwnSK0IYtrmJgM7k3VdIvm5Q96bGCcns3HPwh=s1360-w1360-h1020"
+    photos: "https://lh3.googleusercontent.com/p/AF1QipOJwnSK0IYtrmJgM7k3VdIvm5Q96bGCcns3HPwh=s1360-w1360-h1020",
+    phone_number: "06 83705890"
   },
 
   {
     name: "Yam yam trattoria-pizzeria",
     location: "Frederik Hendrikstraat 90",
     url: "https://www.yam-yam-trattoria-pizzeria.nl/",
-    photos: "https://lh3.googleusercontent.com/p/AF1QipPFXFn0MQb9UGkDlM45qSTaXrXN2as4Oj-tNmrb=s1360-w1360-h1020"
+    photos: "https://lh3.googleusercontent.com/p/AF1QipPFXFn0MQb9UGkDlM45qSTaXrXN2as4Oj-tNmrb=s1360-w1360-h1020",
+    phone_number: "020 681 5097"
   },
 
   {
     name: "Mana Mana West",
     location: "Frederik Hendrikplantsoen 36",
     url: "https://mana-mana.nl",
-    photos: "https://lh3.googleusercontent.com/p/AF1QipNAaf3-CxZNsAo1_l6smh7jY6vrJzHX2XeaTbzd=s1360-w1360-h1020"
+    photos: "https://lh3.googleusercontent.com/p/AF1QipNAaf3-CxZNsAo1_l6smh7jY6vrJzHX2XeaTbzd=s1360-w1360-h1020",
+    phone_number: "020 845 8867"
 
   },
 
@@ -60,69 +69,72 @@ Restaurant.create([
     name: "Mondi Amsterdam New West",
     location: "Aletta Jacobslaan 7",
     url: "https://www.mondirestaurant.com/",
-    photos: "https://lh3.googleusercontent.com/p/AF1QipNAaf3-CxZNsAo1_l6smh7jY6vrJzHX2XeaTbzd=s1360-w1360-h1020"
+    photos: "https://lh3.googleusercontent.com/p/AF1QipNAaf3-CxZNsAo1_l6smh7jY6vrJzHX2XeaTbzd=s1360-w1360-h1020",
+    phone_number: "020 820 7832"
+
   },
   {
     name: "Bar Bouche",
     location: "Wibautstraat 107h",
     url: "https://www.barbouche.nl/",
-    photos: "https://lh3.googleusercontent.com/p/AF1QipMfCTzvyUzf2Gg2ocVIupiXaZ2mNw5YGw6yq1WT=s1360-w1360-h1020"
+    photos: "https://lh3.googleusercontent.com/p/AF1QipMfCTzvyUzf2Gg2ocVIupiXaZ2mNw5YGw6yq1WT=s1360-w1360-h1020",
+    phone_number: "020 280 7040"
   },
   {
     name: "Poppy's Amsterdam",
     location: "Lutmastraat 99",
     url: "https://www.poppysamsterdam.nl/",
-    photos: "https://lh3.googleusercontent.com/p/AF1QipO7XhpOOssy3fPKN1glqrLcT8Wg4rbYkFoG38xp=s1360-w1360-h1020"
+    photos: "https://lh3.googleusercontent.com/p/AF1QipO7XhpOOssy3fPKN1glqrLcT8Wg4rbYkFoG38xp=s1360-w1360-h1020",
+    phone_number: "020 341 8799"
   },
   {
     name: "Bar Kartel",
     location: "Overtoom 28",
     url: "https://bar-kartel.nl/",
-    photos: "https://lh3.googleusercontent.com/p/AF1QipNeeWzxB2IiaP1xU3Tn65WdWQDMxDzDTiPySEmm=s1360-w1360-h1020"
+    photos: "https://lh3.googleusercontent.com/p/AF1QipNeeWzxB2IiaP1xU3Tn65WdWQDMxDzDTiPySEmm=s1360-w1360-h1020",
+    phone_number: "020 765 7010"
   },
   {
     name: "Lavash",
     location: "Korte Leidsedwarsstraat 119",
     url: "https://restaurantlavash.nl",
-    photos: "https://lh3.googleusercontent.com/p/AF1QipNX2IznYm_Dqad8-VtRBGFY5mWJVkqkwQci_7Nj=s1360-w1360-h1020"
+    photos: "https://lh3.googleusercontent.com/p/AF1QipNX2IznYm_Dqad8-VtRBGFY5mWJVkqkwQci_7Nj=s1360-w1360-h1020",
+    phone_number: "020 771 4344"
   },
   {
     name: "Silom Thai Brasserie",
     location: "Voetboogstraat 13,",
     url: "https://silomthaibrasserie.nl/",
-    photos: "https://lh3.googleusercontent.com/p/AF1QipPP129CXSHmVXi-yH9sSjRyPgbWhxQOrgDMCnVF=s1360-w1360-h1020"
+    photos: "https://lh3.googleusercontent.com/p/AF1QipPP129CXSHmVXi-yH9sSjRyPgbWhxQOrgDMCnVF=s1360-w1360-h1020",
+    phone_number: "020 244 2894"
   },
   {
     name: "Tasca Bellota",
     location: "Bickerswerf 2, 1013 KX Amsterdam",
     url: "https://tascabellota.nl/",
-    photos: "https://lh3.googleusercontent.com/p/AF1QipMVKPqevsOPYmPvfl5NPU12RwGJVViUJUt7qqv_=s1360-w1360-h1020"
+    photos: "https://lh3.googleusercontent.com/p/AF1QipMVKPqevsOPYmPvfl5NPU12RwGJVViUJUt7qqv_=s1360-w1360-h1020",
+    phone_number: "020 320 2951"
   },
   {
     name: "Señor Mostachio",
     location: "Ruysdaelkade 183",
     url: "https://www.senor-mostachio-amsterdam.nl/",
-    photos: "https://lh3.googleusercontent.com/p/AF1QipOiPi5LD7sT_-BhNxQ_iCSsXV6B9DECQ-3Tq4XR=s1360-w1360-h1020"
-  }
-
-  ])
-
-
-puts "Creating restaurants..."
-
-Restaurant.create!({
-
-    name: "3 Trees Cafe",
+    photos: "https://lh3.googleusercontent.com/p/AF1QipOiPi5LD7sT_-BhNxQ_iCSsXV6B9DECQ-3Tq4XR=s1360-w1360-h1020",
+    phone_number: "06 11628545"
+  },
+  {  name: "3 Trees Cafe",
     location: "Zieseniskade 26, 1017 RW Amsterdam, Netherlands",
     url: "https://www.wagyukanata.com/amsterdam",
-    photos: "https://www.telegraph.co.uk/content/dam/Travel/Destinations/Europe/Netherlands/Amsterdam/amsterdam-VanOost-Restaurant-85.jpg"
+    photos: "https://www.telegraph.co.uk/content/dam/Travel/Destinations/Europe/Netherlands/Amsterdam/amsterdam-VanOost-Restaurant-85.jpg",
+    phone_number: "020-2801334"
   },
   {
     name: "The Pantry",
     location: "Leidsekruisstraat 21, 1017 RE Amsterdam, Netherlands",
     url: "https://www.thepantry.nl/en/",
-    photos: "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/19/19/9f/2c/restaurant-1eklas.jpg?w=600&h=-1&s=1"
+    photos: "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/19/19/9f/2c/restaurant-1eklas.jpg?w=600&h=-1&s=1",
+    phone_number: "020 620 0922"
   }
-  ])
 
-puts "created #{ Restaurant.count } restaurants"
+  ])
+  puts "Created 17 new restaurants"
