@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   devise_for :users
   root to: "pages#home"
-  resources :restaurants
+  # resources :restaurants
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Reveal health status on /up that returns 200 if the app boots with no exceptions, otherwise 500.
@@ -13,7 +13,7 @@ Rails.application.routes.draw do
   get "profile", to: "pages#profile"
   get "wishlist", to: "pages#wishlist"
 
-  resources :restaurants, only: [:index, :show] do
+  resources :restaurants, only: [:new, :index, :show] do
     resources :recommendations, only: [:index, :create, :new]
     resources :wishlists, only: [:create, :destroy]
   end
