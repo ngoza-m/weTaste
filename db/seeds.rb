@@ -103,8 +103,15 @@ Restaurant.create([
     location: "Ruysdaelkade 183",
     url: "https://www.senor-mostachio-amsterdam.nl/",
     photos: "https://lh3.googleusercontent.com/p/AF1QipOiPi5LD7sT_-BhNxQ_iCSsXV6B9DECQ-3Tq4XR=s1360-w1360-h1020"
-  },
-  {
+  }
+
+  ])
+
+
+puts "Creating restaurants..."
+
+Restaurant.create!({
+
     name: "3 Trees Cafe",
     location: "Zieseniskade 26, 1017 RW Amsterdam, Netherlands",
     url: "https://www.wagyukanata.com/amsterdam",
@@ -117,3 +124,5 @@ Restaurant.create([
     photos: "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/19/19/9f/2c/restaurant-1eklas.jpg?w=600&h=-1&s=1"
   }
   ])
+
+puts "created #{ Restaurant.count } restaurants"
