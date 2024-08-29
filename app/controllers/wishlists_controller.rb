@@ -4,7 +4,7 @@ class WishlistsController < ApplicationController
         @wishlist.user = current_user
         @wishlist.restaurant = Restaurant.find(params[:restaurant_id])
         if @wishlist.save
-            redirect_to restaurant_path(params[:restaurant_id])
+            redirect_to wishlist_path
         else
             render "restaurants/show"
         end
