@@ -26,12 +26,17 @@
   <p> No recommendations yet </p>
 <% else %>
   <% @recommendations.each do |recommendation| %>
-    <p> <%= recommendation.content %> </p>
-    <p> <%= recommendation.user.email %> </p>
-    <% if recommendation.photos.attached? %>
+    <p class="m-0"> <%= recommendation.content %> </p>
+    <small><em> —<%= recommendation.user.email %> </em></small>
+   <% raise %>
+    <% if current_user.recommendations.include?(recommendation) %>
+      <%= button_to "Remove Recommendation", restaurant_recommendation_path(@restaurant, recommendation), method: :delete, class: "btn btn-danger mb-3" %>
+    <% end %>
+
+    <!-- <% if recommendation.photos.attached? %>
       <% recommendation.photos.each do |photo| %>
         <%= image_tag photo %>
-      <% end %>
+      <% end %> -->
     <% end %>
   <% end %>
 <% end %>
