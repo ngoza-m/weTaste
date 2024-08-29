@@ -74,3 +74,10 @@ group :test do
   gem "capybara"
   gem "selenium-webdriver"
 end
+
+
+#INSTALLED GEMS
+
+gem "devise"
+gem "cloudinary"
+
