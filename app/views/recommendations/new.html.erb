@@ -1,0 +1,5 @@
+<%= simple_form_for [@restaurant, @recommendation] do |f| %>
+    <%= f.input :photos, as: :file, input_html: { multiple: true } %>
+    <%= f.input :content, label: 'content', placeholder: 'write something...' %>
+    <%= f.button :submit, class: "btn btn-primary mb-3" %>
+<% end %>
