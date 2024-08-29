@@ -77,7 +77,7 @@ Restaurant.create([
   {
     name: "Silom Thai Brasserie",
     location: "Voetboogstraat 13,",
-    website: "https://silomthaibrasserie.nl/"
+    url: "https://silomthaibrasserie.nl/"
   },
   {
     name: "Tasca Bellota",
@@ -91,7 +91,7 @@ Restaurant.create([
   }
 
   ])
-=======
+
 
 puts "Creating restaurants..."
 

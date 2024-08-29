@@ -1,0 +1,19 @@
+.notification-actions {
+    opacity: 0;
+    display: flex;
+    transition: ease .3s;
+    }
+
+.notification-actions:hover {
+    opacity: 1;
+}
+
+.notification-actions a {
+    color: #333333;
+    margin-left: 16px;
+    font-size: 14px;
+}
+
+.notification-actions a:hover {
+    color: #555555;
+}

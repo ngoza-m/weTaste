@@ -4,8 +4,8 @@
   <% @restaurants.each do |restaurant| %>
     <p>
     <%= restaurant.name %>
-    <%= restaurant.website %>
-    <%= restaurant.address %>
+    <%= restaurant.url %>
+    <%= restaurant.location %>
       <%= link_to "Show this restaurant", restaurant %>
     </p>
   <% end %>

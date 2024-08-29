@@ -3,12 +3,9 @@
 
 
 
-<% user_wishlists = current_user.wishlists %>
 
-<% wishlist = user_wishlists.find_by(restaurant_id: @restaurant.id) %>
-
-<% if wishlist %>
-  <%= button_to "Remove from Wishlist", restaurant_wishlist_path(@restaurant, wishlist), method: :delete, class: "btn btn-danger mb-3" %>
+<% if @user_restaurant_wishlist %>
+  <%= button_to "Remove from Wishlist", restaurant_wishlist_path(@restaurant, @user_restaurant_wishlist), method: :delete, class: "btn btn-danger mb-3" %>
 <% else %>
   <%= simple_form_for [@restaurant, @wishlist] do |f| %>
     <%= f.submit "Add to Wishlist", class: "btn btn-primary mb-3" %>
@@ -26,12 +23,19 @@
   <p> No recommendations yet </p>
 <% else %>
   <% @recommendations.each do |recommendation| %>
-    <p> <%= recommendation.content %> </p>
-    <p> <%= recommendation.user.email %> </p>
-    <% if recommendation.photos.attached? %>
+    <p class="m-0"> <%= recommendation.content %> </p>
+    <small><em> —<%= recommendation.user.email %> </em></small>
+    <% if current_user.recommendations.include?(recommendation) %>
+        <div class="notification-actions">
+            <a href="#">Edit <i class="fas fa-pencil-alt"></i></a>
+            <a href="#">Delete <i class="far fa-trash-alt"></i></a>
+        </div>
+    <% end %>
+
+    <!-- <% if recommendation.photos.attached? %>
       <% recommendation.photos.each do |photo| %>
         <%= image_tag photo %>
-      <% end %>
+      <% end %> -->
     <% end %>
   <% end %>
 <% end %>

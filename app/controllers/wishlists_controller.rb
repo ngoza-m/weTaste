@@ -10,9 +10,7 @@ class WishlistsController < ApplicationController
         end
     end
 
-    def show
-
-    end
+   
 
     def destroy
         @wishlist = Wishlist.find(params[:id])
