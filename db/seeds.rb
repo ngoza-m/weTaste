@@ -14,38 +14,45 @@ Restaurant.create([
     name: "Franggo De Pijp",
     location: "Eerste Sweelinckstraat 9h",
     url: "https://www.franggo.nl"
+    photos: "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/19/19/9f/2c/restaurant-1eklas.jpg?w=600&h=-1&s=1"
   },
   {
     name: "Dignita Vondelpark",
     location: "Koninginneweg 218",
     url: "https://eatwelldogood.nl"
+    photos:"https://dynamic-media-cdn.tripadvisor.com/media/photo-o/08/a1/5f/05/dignita.jpg?w=2000&h=-1&s=1"
   },
   {
     name: "Vinkeles",
     location: "Keizersgracht 384",
     url: "https://www.vinkeles.com"
+    photos:"https://dynamic-media-cdn.tripadvisor.com/media/photo-o/2a/1d/68/23/interior-restaurant-vinkeles.jpg?w=1400&h=-1&s=1"
   },
   {
     name: "Ciel Bleu Restaurant",
     location: "Ferdinand Bolstraat 333",
     url: "https://www.cielbleu.nl"
+    photos:""
   },
   {
     name: "Dimitri's Restaurant",
     location: "Insulindeweg 1",
     url: "https://www.dimitris.amsterdam/"
+    photos:""
   },
 
   {
     name: "Yam yam trattoria-pizzeria",
     location: "Frederik Hendrikstraat 90",
     url: "https://www.yam-yam-trattoria-pizzeria.nl/"
+    photos:""
   },
 
   {
     name: "Mana Mana West",
     location: "Frederik Hendrikplantsoen 36",
     url: "https://mana-mana.nl"
+    photos:""
 
   },
 
@@ -53,61 +60,65 @@ Restaurant.create([
     name: "Mondi Amsterdam New West",
     location: "Aletta Jacobslaan 7",
     url: "https://www.mondirestaurant.com/"
+    photos:""
   },
   {
     name: "Bar Bouche",
     location: "Wibautstraat 107h",
     url: "https://www.barbouche.nl/"
+    photos:""
   },
   {
     name: "Poppy's Amsterdam",
     location: "Lutmastraat 99",
     url: "https://www.poppysamsterdam.nl/"
+    photos:""
   },
   {
     name: "Bar Kartel",
     location: "Overtoom 28",
     url: "https://bar-kartel.nl/"
+    photos:""
   },
   {
     name: "Lavash",
     location: "Korte Leidsedwarsstraat 119",
     url: "https://restaurantlavash.nl"
+    photos:""
   },
   {
     name: "Silom Thai Brasserie",
     location: "Voetboogstraat 13,",
-    website: "https://silomthaibrasserie.nl/"
+    url: "https://silomthaibrasserie.nl/"
+    photos:""
   },
   {
     name: "Tasca Bellota",
     location: "Bickerswerf 2, 1013 KX Amsterdam",
     url: "https://tascabellota.nl/"
+    photos:""
   },
   {
     name: "Señor Mostachio",
     location: "Ruysdaelkade 183",
     url: "https://www.senor-mostachio-amsterdam.nl/"
-  }
-
-  ])
-=======
-
-puts "Creating restaurants..."
-
-Restaurant.create!({
+    photos:""
+  },
+  {
     name: "3 Trees Cafe",
     location: "Zieseniskade 26, 1017 RW Amsterdam, Netherlands",
     url: "https://www.wagyukanata.com/amsterdam",
     photos: "https://www.telegraph.co.uk/content/dam/Travel/Destinations/Europe/Netherlands/Amsterdam/amsterdam-VanOost-Restaurant-85.jpg"
-})
-
-Restaurant.create!({
+  },
+  {
     name: "The Pantry",
     location: "Leidsekruisstraat 21, 1017 RE Amsterdam, Netherlands",
     url: "https://www.thepantry.nl/en/",
     photos: "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/19/19/9f/2c/restaurant-1eklas.jpg?w=600&h=-1&s=1"
-})
+  ])
+
+
+puts "Creating restaurants..."
+
 
 puts "Created #{Restaurant.count} restaurants."
-

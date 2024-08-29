@@ -16,7 +16,7 @@
 <% end %>
 
 <%= link_to "Add a Recommendation", new_restaurant_recommendation_path(@restaurant, @recommendation), class: "btn btn-primary mb-3"   %>
-        
+
 
 
 <p> ❤️ <%= Wishlist.where(restaurant_id: @restaurant.id).count %> wishlisted </p>
@@ -35,6 +35,3 @@
     <% end %>
   <% end %>
 <% end %>
-
-
-
