@@ -12,7 +12,10 @@ class PagesController < ApplicationController
 
   def wishlist
     @wishlisted_restaurants = current_user.restaurants
-    
+  end
+
+  def city_search
+    @restaurants = Restaurant.where(location: params[:location])
   end
 
 end

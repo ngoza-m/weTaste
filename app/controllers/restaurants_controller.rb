@@ -2,7 +2,11 @@ class RestaurantsController < ApplicationController
     skip_before_action :authenticate_user!, only: [:index, :show]
 
     def index
-        @restaurants = Restaurant.all
+        if params[:query].present?
+            @restaurants = Restaurant.search_by_location(params[:query])
+        else
+            @restaurants = Restaurant.all
+        end
     end
 
     def show

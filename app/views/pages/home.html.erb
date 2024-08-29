@@ -1,10 +1,11 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<%= render "shared/search" %>
+
 
 <% @restaurants.each do |restaurant| %>
-    <h2><%= restaurant.name %> <h2>
+    <p><%= restaurant.name %> </p>
+    <p><%= restaurant.url %></p>
     <p><%= restaurant.location %></p>
-    <%= link_to "View", restaurant_path(restaurant) %>
+    <p><%= link_to "Show this restaurant", restaurant %></p>
 <% end %>
 
 <!-- ICONS -->

@@ -18,7 +18,14 @@ class RecommendationsController < ApplicationController
         end
     end
 
-    def show
+    def edit
+        @recommendation = Recommendation.find(params[:id])
+    end
+
+    def update
+        @recommendation = Recommendation.find(params[:id])
+        @recommendation.update(recommendation_params)
+        redirect_to restaurant_path(@recommendation.restaurant)
     end
 
     def destroy

@@ -1,0 +1,28 @@
+<h2>Stats</h2>
+
+<div class="row">
+        <p>❤️ <%= current_user.recommendations.count %> recommendations</p>
+        <p>❤️ <%= current_user.wishlists.count %> wishlisted</p>
+</div>
+
+<h2>My Recommendations</h2>
+
+<% recs = current_user.recommendations %>
+
+<% if recs.empty? %>
+    <p> No recommendations yet </p>
+<% else %>
+    
+    <% recs.each do |recommendation| %>
+        <p><%= link_to recommendation.restaurant.name, restaurant_path(recommendation.restaurant) %></p>
+        <p class="m-0"> <%= recommendation.content %> </p>
+            <div class="notification-actions">
+                <%= link_to edit_recommendation_path(recommendation) do %>
+                    <i class="fas fa-pencil-alt"></i>
+                <% end %>
+                <%= link_to recommendation, method: :delete, data: { confirm: "Are you sure?" } do %>
+                    <i class="far fa-trash-alt"></i>
+                <% end %>
+            </div>
+        <% end %>
+<% end %>
