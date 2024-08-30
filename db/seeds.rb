@@ -8,7 +8,11 @@
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
 puts "Destroying old restaurants"
+
+Wishlist.destroy_all
+Recommendation.destroy_all
 Restaurant.destroy_all
+
 
 puts "Creating new restaurants"
 Restaurant.create([
@@ -137,3 +141,10 @@ Restaurant.create([
   }
 
   ])
+
+puts "Created #{Restaurant.count} restaurants"
+
+restaurants = Restaurant.all
+restaurants.each do |restaurant|
+  restaurant.update(city: "Amsterdam")
+end

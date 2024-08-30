@@ -13,7 +13,7 @@ Rails.application.routes.draw do
   get "profile", to: "pages#profile"
   get "wishlist", to: "pages#wishlist"
 
-  # get "city_search", to: "pages#city_search"
+  get "search", to: "pages#city_search"
 
   resources :restaurants, only: [:new, :index, :show] do
     resources :recommendations, only: [:index, :create, :new]

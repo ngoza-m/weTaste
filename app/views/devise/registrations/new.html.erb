@@ -4,6 +4,26 @@
   <%= f.error_notification %>
 
   <div class="form-inputs">
+    <%= f.input :photo,
+                required: false,
+                autofocus: true,
+                input_html: { autocomplete: "username" }%>
+    <%= f.input :first_name,
+                required: true,
+                autofocus: true,
+                input_html: { autocomplete: "first-Name" }%>
+    <%= f.input :last_name,
+                required: true,
+                autofocus: true,
+                input_html: { autocomplete: "Last-Name" }%>
+    <%= f.input :location,
+                required: true,
+                autofocus: true,
+                input_html: { autocomplete: "location" }%>
+    <%= f.input :bio,
+                required: false,
+                autofocus: true,
+                input_html: { autocomplete: "bio" }%>            
     <%= f.input :email,
                 required: true,
                 autofocus: true,
@@ -15,6 +35,7 @@
     <%= f.input :password_confirmation,
                 required: true,
                 input_html: { autocomplete: "new-password" } %>
+    
   </div>
 
   <div class="form-actions">
