@@ -1,5 +1,11 @@
+<link rel="stylesheet" href="styles.css">
+<p class="centered-text">Add to Your <span class="highlight">Amsterdam</span> Favourites</p>
+
+<hr>
+
 <%= simple_form_for [@restaurant, @recommendation] do |f| %>
-    <%= f.input :photos, as: :file, input_html: { multiple: true } %>
-    <%= f.input :content, label: 'content', placeholder: 'write something...' %>
+    <%= f.input :content, label: 'Recommendation:', placeholder: 'Describe what you love about this place...' %>
     <%= f.button :submit, class: "btn btn-primary mb-3" %>
+    <%= f.input :photos, as: :file, input_html: { multiple: true } %>
+    <%= f.input :tags, label: '+ add tags'  '+ add photos' %>
 <% end %>

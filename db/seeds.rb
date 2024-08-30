@@ -8,6 +8,7 @@
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
 puts "Destroying old restaurants"
+# Wisshlist.update_all(restaurant_id: nil)
 Restaurant.destroy_all
 
 puts "Creating new restaurants"
@@ -137,3 +138,17 @@ Restaurant.create([
   }
 
   ])
+  puts "Destroying old recommendations"
+# Recommendation.destroy_all
+puts "Creating new recommendations"
+  Recommendation.create([
+    {
+      content: "Great food, great service, great atmosphere. I would definitely recommend this place to anyone looking for a great dining experience.",
+      restaurant_id: 120,
+      user_id: 1,
+      tags: "great food, great service",
+    }
+
+  ])
+
+  puts "Created recommendation restaurants"
