@@ -15,7 +15,9 @@ class PagesController < ApplicationController
   end
 
   def city_search
-    @restaurants = Restaurant.where(location: params[:location])
+    if params[:query].present?
+      @restaurants = Restaurant.search_by_location(params[:query])
+    end
   end
 
 end

@@ -1,19 +1,30 @@
+
 <div class="logo-container text-center py-4">
   <h1 class="app-logo">WeTaste</h1>
   <p class="app-slogan">Where taste meets trust.</p>
 </div>
 
-<%= render "shared/search" %>
+<div class="container">
+    <%= render "shared/search" %>
 
-<div class="restaurants-list">
-  <% @restaurants.each do |restaurant| %>
-      <div class="restaurant-item">
-          <p><%= restaurant.name %></p>
-          <p><%= restaurant.url %></p>
-          <p><%= restaurant.location %></p>
-          <p><%= link_to "Show this restaurant", restaurant %></p>
-      </div>
-  <% end %>
+    <h3 style="margin-top: 30px;"><em>Places You'll Love</em></h3>
+
+<% @restaurants.each do |restaurant| %>
+
+    <div class="home-card">
+        <img src="<%= restaurant.photos %>" class="home-card-image">
+        <div class="home-card-content">
+            <p><%= link_to restaurant.name, restaurant %> </p>
+            <!-- <p><%= restaurant.url %></p> -->
+            <p><%= restaurant.location %></p>
+            <!-- <p><%= link_to "Show this restaurant", restaurant %></p> -->
+        </div>
+    </div>    
+
+
+<% end %>
+
+
 </div>
 
 <!-- ICONS -->
@@ -21,3 +32,4 @@
   <span class="material-symbols-outlined">local_cafe</span>
   <!-- to add more icons here -->
 </div>
+
