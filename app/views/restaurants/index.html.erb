@@ -1,13 +1,14 @@
-<h1>Restaurants</h1>
+<%= render "shared/search" %>
+
+<!-- <h1>Restaurants</h1> -->
 
 <div id="restaurants">
   <% @restaurants.each do |restaurant| %>
-    <p>
-    <%= restaurant.name %>
-    <%= restaurant.url %>
-    <%= restaurant.location %>
-      <%= link_to "Show this restaurant", restaurant %>
-    </p>
+    <p><%= restaurant.name %> </p>
+    <p><%= restaurant.url %></p>
+    <p><%= restaurant.location %></p>
+    <p><%= link_to "Show this restaurant", restaurant %></p>
+    
   <% end %>
 </div>
 

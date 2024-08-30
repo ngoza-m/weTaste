@@ -6,11 +6,11 @@
 
 
 <% if @user_restaurant_wishlist %>
-  <%= button_to "Remove from Wishlist", restaurant_wishlist_path(@restaurant, @user_restaurant_wishlist), method: :delete, class: "btn btn-danger mb-3" %>
+    <%= button_to "Remove from Wishlist", restaurant_wishlist_path(@restaurant, @user_restaurant_wishlist), method: :delete, class: "btn btn-danger mb-3" %>
 <% else %>
-  <%= simple_form_for [@restaurant, @wishlist] do |f| %>
-    <%= f.submit "Add to Wishlist", class: "btn btn-primary mb-3" %>
-  <% end %>
+    <%= simple_form_for [@restaurant, @wishlist] do |f| %>
+        <%= f.submit "Add to Wishlist", class: "btn btn-primary mb-3" %>
+    <% end %>
 <% end %>
 
 <%= link_to "Add a Recommendation", new_restaurant_recommendation_path(@restaurant, @recommendation), class: "btn btn-primary mb-3"   %>
@@ -21,22 +21,29 @@
 
 <h2> Recommendations </h2>
 <% if @recommendations.empty? %>
-  <p> No recommendations yet </p>
+    <p> No recommendations yet </p>
 <% else %>
-  <% @recommendations.each do |recommendation| %>
-    <p class="m-0"> <%= recommendation.content %> </p>
-    <small><em> —<%= recommendation.user.email %> </em></small>
-    <% if current_user.recommendations.include?(recommendation) %>
-        <div class="notification-actions">
-            <a href="#">Edit <i class="fas fa-pencil-alt"></i></a>
-            <a href="#">Delete <i class="far fa-trash-alt"></i></a>
-        </div>
+    <% @recommendations.each do |recommendation| %>
+        <p class="m-0"> <%= recommendation.content %> </p>
+        <small><em> —<%= recommendation.user.email %> </em></small>
+        <% if current_user.recommendations.include?(recommendation) %>
+            <div class="notification-actions">
+                <a href=<%= edit_recommendation_path(recommendation) %>> <i class="fas fa-pencil-alt"></i></a>
+                <%= button_to recommendation_path(recommendation), method: :delete, data: { confirm: 'Are you sure?' } do %> 
+                <i class="far fa-trash-alt"></i> 
+                <% end %>
+            </div>
+        <% end %>
     <% end %>
 
-    <!-- <% if recommendation.photos.attached? %>
-      <% recommendation.photos.each do |photo| %>
-        <%= image_tag photo %>
-      <% end %> -->
+    <h2> Photos </h2>
+    
+    <% @recommendations.each do |recommendation| %>
+        <% if recommendation.photos.attached? %>
+            <% recommendation.photos.each do |photo| %>
+                <%= image_tag photo %>
+            <% end %>
+        <% end %>
     <% end %>
-  <% end %>
+
 <% end %>
