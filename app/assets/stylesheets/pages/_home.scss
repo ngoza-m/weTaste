@@ -1,1 +1,21 @@
 // Specific CSS for your home-page
+
+.logo-container {
+  background-color: $canvas;
+  padding: 50px 0;; // Padding for top and bottom to add space
+
+  .app-logo {
+    font-family: $logo-font;
+    font-size: 40px;
+    font-weight: 400;
+    color: $logo-color;
+    margin-bottom: 8px; // Space between title and slogan
+  }
+
+  .app-slogan {
+    font-family: $body-font;
+    font-size: 19.2px;
+    font-weight: 300;
+    color: $ink;
+  }
+}
