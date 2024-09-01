@@ -195,6 +195,8 @@ GEM
     nokogiri (1.16.7-x86_64-linux)
       racc (~> 1.4)
     orm_adapter (0.5.0)
+    pexels (0.5.0)
+      requests (~> 1.0.2)
     pg (1.5.7)
     pg_search (2.3.7)
       activerecord (>= 6.1)
@@ -249,6 +251,7 @@ GEM
     regexp_parser (2.9.2)
     reline (0.5.9)
       io-console (~> 0.5)
+    requests (1.0.2)
     responders (3.1.1)
       actionpack (>= 5.2)
       railties (>= 5.2)
@@ -324,6 +327,7 @@ DEPENDENCIES
   font-awesome-sass (~> 6.1)
   importmap-rails
   jbuilder
+  pexels (~> 0.5.0)
   pg (~> 1.1)
   pg_search
   puma (>= 5.0)

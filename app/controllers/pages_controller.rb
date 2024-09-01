@@ -20,4 +20,10 @@ class PagesController < ApplicationController
     end
   end
 
+  def recommendationsbycity
+    @recs = current_user.recommendations
+    @sorted_recs = @recs.group_by{ |rec| rec.restaurant.city }
+    @sorted_recs_by_city = @sorted_recs[params[:city]]
+  end
+
 end

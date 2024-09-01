@@ -81,5 +81,6 @@ end
 gem "devise"
 gem "cloudinary"
 gem "pg_search"
+gem 'pexels', '~> 0.5.0'
 
 
