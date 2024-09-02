@@ -9,22 +9,22 @@
 
 <hr>
 
+
 <%= simple_form_for [@restaurant, @recommendation] do |f| %>
-
-
    <div class="content-box1">
     <%= f.input :content, label: false, class: "input-content", placeholder: 'Describe what you love about this place...'  %>
-    <%= f.button :submit, "Add recommendation", class: "button-recommendation" %>
+    <%= f.button :submit, "Add Recommendation", class: "button-recommendation" %>
   </div>
+  <div class="rec-container col-s-6">
+    <div class="photos">
+      <%= f.input :photos, as: :file, input_html: { multiple: true }, label: "Add Photos:" %>
+    </div>
 
-
-
-   <%# <%= f.input :tags, class: "input-tags", label: "Add tags" %>
-
-  <div class="photos">
- <%= f.input :photos, as: :file, input_html: { multiple: true }, label: "Add photos:" %>
+    <div class="tags">
+      <%= f.input :tag_list, class: "input-tags",  label: "Add Tags"  %>
+      <%= f.button :submit, "+ Tags", class: "button-recommendation"%>
+    </div>
 </div>
-
-  <p>Add tags</p>
-
 <% end %>
+
+
