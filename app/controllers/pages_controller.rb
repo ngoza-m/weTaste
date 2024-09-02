@@ -1,13 +1,12 @@
 class PagesController < ApplicationController
   skip_before_action :authenticate_user!, only: :home
-  
+
   def home
     @restaurants = Restaurant.all
   end
 
   def profile
     @user = current_user
-    
   end
 
   def wishlist
@@ -19,5 +18,4 @@ class PagesController < ApplicationController
       @restaurants = Restaurant.search_by_location(params[:query])
     end
   end
-
 end

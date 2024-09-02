@@ -1,39 +1,29 @@
-
-ul.footer {
-  color: blue;
-}
-
 .footer {
   position: fixed;
   bottom: 0;
   width: 100%;
-  height: auto;
+  height: 50px;
   display: flex;
   justify-content: space-around;
   list-style-type: none;
   padding: 10px;
   margin: 0;
-  background-color: #6a497a;
+  background-color: $blush;
 }
 
-.footer li {
+.footer-menu-item {
   display: flex;
   flex-direction: column;
-  align-items: center;  
-  text-align: center;
-  color: white;
+  align-items: center;
 }
 
-.footer i {
-  font-size: 1.5em;
-  margin-bottom: 5px;
+.footer-menu-item .icon-path {
+  fill: none;
+  stroke: white;
+  transition: fill 0.3s, stroke 0.3s; /* Smooth transition */
 }
 
-.footer span {
-  font-size: 0.9em;
-}
-
-.footer a {
-  color: white;
-  text-decoration: none;
+.footer-menu-item.selected .icon-path {
+  fill: white; /* Color when selected */
+  stroke: white; /* Matching stroke with fill */
 }
