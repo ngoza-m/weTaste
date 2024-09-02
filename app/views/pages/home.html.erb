@@ -1,34 +1,25 @@
-
-<div class="logo-container text-center py-4">
+<div class="logo-container text-center">
   <%= image_tag "logo.svg", alt: "WeTaste Logo", class: "app-logo" %>
   <p class="app-slogan">Where Friends Meet Taste.</p>
 </div>
 
 <div class="container">
-    <%= render "shared/search" %>
+  <%= render "shared/search" %>
 
-    <h3 style="margin-top: 30px;"><em>Places You'll Love</em></h3>
+  <h3 style="margin-top: 30px;"><em>Places You'll Love</em></h3>
 
-<% @restaurants.each do |restaurant| %>
-
-    <div class="home-card">
+    <% @restaurants.each do |restaurant| %>
+    <%= link_to restaurant do %>
+      <div class="home-card">
         <img src="<%= restaurant.photos %>" class="home-card-image">
         <div class="home-card-content">
-            <p><%= link_to restaurant.name, restaurant %> </p>
-            <!-- <p><%= restaurant.url %></p> -->
+          <div class="restaurant-details">
+            <p><%= restaurant.name %></p>
             <p><%= restaurant.location %></p>
-            <!-- <p><%= link_to "Show this restaurant", restaurant %></p> -->
+          </div>
         </div>
-    </div>
+      </div>
+    <% end %>
+  <% end %>
 
-
-<% end %>
-
-
-</div>
-
-<!-- ICONS -->
-<div class="icon-group">
-  <span class="material-symbols-outlined">local_cafe</span>
-  <!-- to add more icons here -->
 </div>
