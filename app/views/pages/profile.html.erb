@@ -2,6 +2,7 @@
 <% pexels = Pexels::Client.new(ENV['PEXELS_API_KEY']) %>
 
 <div class="profile-header">
+
 <% if current_user.photo.attached? %>
         <div class="profile-avatar"><%= cl_image_tag @user.photo.key, :width=>130, :crop=>"fill" %></div>
     <% else %>
@@ -21,17 +22,20 @@
         <div class="row">
             <div class="first-stat col">
                 <p> <%= current_user.recommendations.count %></p>
-                <p>Recommendations</p>
+                <p style="font-size: 12px; font-weight: bold;">RECOMMENDATIONS</p>
             </div>
-            <div class="col">
+            <div class="second-stat col">
                 <p><%= current_user.wishlists.count %></p>
-                <p>Wishlisted</p>
+                <p style="font-size: 12px; font-weight: bold;">WISHLISTED</p>
             </div>
     </div>
     </div>
 
-    <div class="recommendations-container">
-        <h5>MY RECOMMENDATIONS</h5>
+    
+        <div class="recommendations-container">
+        <div class="row">
+            <h5>MY RECOMMENDATIONS</h5>
+        </div>
 
         <% recs = current_user.recommendations %>
         <% sorted_recs = recs.group_by{ |rec| rec.restaurant.city } %>
@@ -49,6 +53,8 @@
                 </div>
             <% end %>
         </div>
+    </div>
+    </div>
 
 
     <% if recs.empty? %>
