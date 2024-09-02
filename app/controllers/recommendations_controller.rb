@@ -36,6 +36,6 @@ class RecommendationsController < ApplicationController
   private
 
   def recommendation_params
-    params.require(:recommendation).permit(:content, :body, photos: [])
+    params.require(:recommendation).permit(:content, :body, photos: [], tag_list: [])
   end
 end

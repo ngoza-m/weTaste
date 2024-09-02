@@ -33,6 +33,18 @@ class RestaurantsController < ApplicationController
     end
   end
 
+  def nearby
+    @location = current_user.location
+    @restaurants = Restaurant.where(city: @location)
+
+    @markers = @restaurants.geocoded.map do |restaurant|
+      {
+        lat: restaurant.latitude,
+        lng: restaurant.longitude
+      }
+    end
+  end
+
   private
 
   def restaurant_params

@@ -13,6 +13,7 @@ Rails.application.routes.draw do
   get "profile", to: "pages#profile"
   get "wishlist", to: "pages#wishlist"
   get "recs", to: "pages#recommendationsbycity"
+  get "nearby", to: "restaurants#nearby"
 
   get "search", to: "pages#city_search"
 

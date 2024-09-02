@@ -1,0 +1,10 @@
+<% if current_user.location %>
+  <div style="width: 100%; height: 100vh;"
+    data-controller="map"
+    data-map-markers-value="<%= @markers.to_json %>"
+    data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+  </div>
+
+<% else %>
+   <p>Please <%= link_to "set your location", edit_user_path(current_user) %></p>
+<% end %> 

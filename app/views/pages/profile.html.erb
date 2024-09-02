@@ -2,7 +2,11 @@
 <% pexels = Pexels::Client.new(ENV['PEXELS_API_KEY']) %>
 
 <div class="profile-header">
-    <div class="profile-avatar"><%= cl_image_tag @user.photo.key, :width=>130, :crop=>"fill" %></div>
+    <% if current_user.photo.attached? %>
+        <div class="profile-avatar"><%= cl_image_tag @user.photo.key, :width=>130, :crop=>"fill" %></div>
+    <% else %>
+        <div class="profile-avatar"><%= image_tag "https://marketplace.canva.com/EAFOWUXOOvs/1/0/1600w/canva-green-gradient-minimalist-simple-instagram-profile-picture-tBlf3wVYGhg.jpg", :width=>130, :crop=>"fill"  %> </div>
+    <% end %>
     <div class="profile-bio">
         <h5><%= current_user.first_name %> <%= current_user.last_name %></h5>
         <p style="margin-bottom: 5px;"><strong>Based in: </strong><%=  current_user.location  %></p>
@@ -17,17 +21,20 @@
         <div class="row">
             <div class="first-stat col">
                 <p> <%= current_user.recommendations.count %></p>
-                <p>Recommendations</p>
+                <p style="font-size: 12px; font-weight: bold;">RECOMMENDATIONS</p>
             </div>
-            <div class="col">
+            <div class="second-stat col">
                 <p><%= current_user.wishlists.count %></p>
-                <p>Wishlisted</p>
+                <p style="font-size: 12px; font-weight: bold;">WISHLISTED</p>
             </div>
     </div>
     </div>
 
-    <div class="recommendations-container">
-        <h5>MY RECOMMENDATIONS</h5>
+    
+        <div class="recommendations-container">
+        <div class="row">
+            <h5>MY RECOMMENDATIONS</h5>
+        </div>
 
         <% recs = current_user.recommendations %>
         <% sorted_recs = recs.group_by{ |rec| rec.restaurant.city } %>
@@ -45,6 +52,8 @@
                 </div>
             <% end %>
         </div>
+    </div>
+    </div>
    
 
     <% if recs.empty? %>
