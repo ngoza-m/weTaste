@@ -3,26 +3,52 @@
   color: #f06C6C;
 }
 
-
-hr {
-  border: none;
-  height: 2px;
-  background-color: black;
-  width: 100%;
-  margin: 20px 0;
-}
-
 .centered-text {
-
+  margin-top: 20px;
   text-align: center;
+  color: #6A497A;
 }
 
 .input-content {
-  background-color: yellow;
-  color: yellow;
+
+  width: 400px;
+  height: 400px;
+  padding: 10px;
+  box-sizing: border-box;
+  border: 1px solid #ccc;
+  overflow: auto;
+  font-size: 16px;
+
 }
 
-// .input-content {
-//   background-color: #17A398;
-//   color: #17A398;
-// }
+.restaurant-name {
+  font-size: 24px;
+  text-align: center;
+  color: #6A497A;
+}
+
+.button-recommendation{
+  color: white;
+  background-color: #f06C6C;
+}
+
+textarea.form-control{
+width: 364px;
+border-color: $sunshine;
+height: 350px;
+border: 3px solid $sunshine;
+justify-content: center;
+align-items: center;
+display: block;
+
+margin: 20px ;
+
+}
+textarea.form-control::placeholder {
+  color: darkgray;
+  opacity: 1;
+}
+
+.photos{
+  margin-top: 15px;
+}
