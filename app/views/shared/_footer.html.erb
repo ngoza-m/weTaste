@@ -1,36 +1,71 @@
 <ul class="footer">
   <li class="footer-menu-item">
     <a href="<%= root_path %>">
-      <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24">
-        <path class="icon-path" fill="none" stroke="white" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m3 12l2-2m0 0l7-7l7 7M5 10v10a1 1 0 0 0 1 1h3m10-11l2 2m-2-2v10a1 1 0 0 1-1 1h-3m-6 0a1 1 0 0 0 1-1v-4a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v4a1 1 0 0 0 1 1m-6 0h6" />
-      </svg>
+      <% if current_page?(root_path) %>
+        <%# on the home page %>
+        <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24">
+          <path fill="white" fill-rule="evenodd" d="M12.707 2.293a1 1 0 0 0-1.414 0l-7 7l-2 2a1 1 0 1 0 1.414 1.414L4 12.414V19a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3v-6.586l.293.293a1 1 0 0 0 1.414-1.414z" clip-rule="evenodd" />
+        </svg>
+      <% else %>
+        <%# not on the home page %>
+        <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24">
+          <path fill="white" d="M20.25 10a1.25 1.25 0 1 0-2.5 0zm-14 0a1.25 1.25 0 1 0-2.5 0zm13.866 2.884a1.25 1.25 0 0 0 1.768-1.768zM12 3l.884-.884a1.25 1.25 0 0 0-1.768 0zm-9.884 8.116a1.25 1.25 0 0 0 1.768 1.768zM7 22.25h10v-2.5H7zM20.25 19v-9h-2.5v9zm-14 0v-9h-2.5v9zm15.634-7.884l-9-9l-1.768 1.768l9 9zm-10.768-9l-9 9l1.768 1.768l9-9zM17 22.25A3.25 3.25 0 0 0 20.25 19h-2.5a.75.75 0 0 1-.75.75zm-10-2.5a.75.75 0 0 1-.75-.75h-2.5A3.25 3.25 0 0 0 7 22.25z" />
+        </svg>
+      <% end %>
     </a>
   </li>
 
   <li class="footer-menu-item">
     <a href="<%= root_path %>">
-      <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24">
-        <g class="icon-path" fill="none" stroke="white" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
-          <path d="M17.657 16.657L13.414 20.9a2 2 0 0 1-2.827 0l-4.244-4.243a8 8 0 1 1 11.314 0" />
-          <path d="M15 11a3 3 0 1 1-6 0a3 3 0 0 1 6 0" />
-        </g>
-      </svg>
+      <% if current_page?(root_path) %>
+        <%# on the map page %>
+        <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24">
+          <path fill="white" fill-rule="evenodd" d="M18.207 4.793A8.778 8.778 0 0 0 5.793 17.207l5.5 5.5a1 1 0 0 0 1.414 0l5.5-5.5a8.78 8.78 0 0 0 0-12.414M10.5 11A1.5 1.5 0 0 1 12 9.5h.01a1.5 1.5 0 0 1 1.5 1.5v.01a1.5 1.5 0 0 1-1.5 1.5H12a1.5 1.5 0 0 1-1.5-1.5z" clip-rule="evenodd" />
+        </svg>
+      <% else %>
+        <%# not on the map page %>
+        <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24">
+          <g fill="none" stroke="white" stroke-linejoin="round">
+            <path stroke-width="3.75" d="M12 11h.01v.01H12z" />
+            <path stroke-width="2.5" d="m12 22l5.5-5.5a7.778 7.778 0 1 0-11 0z" />
+          </g>
+        </svg>
+      <% end %>
     </a>
   </li>
 
   <li class="footer-menu-item">
     <a href="<%= wishlist_path %>">
-      <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24">
-        <path class="icon-path" fill="none" stroke="white" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 0 0 0 6.364L12 20.364l7.682-7.682a4.5 4.5 0 0 0-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 0 0-6.364 0" />
-      </svg>
+      <% if current_page?(wishlist_path) %>
+        <%# on the wishlist page %>
+        <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24">
+          <path fill="white" fill-rule="evenodd" d="M4.222 5.364A6 6 0 0 1 12 4.758a6.002 6.002 0 0 1 7.778 9.091l-5.657 5.657a3 3 0 0 1-4.242 0L4.222 13.85a6 6 0 0 1 0-8.485" clip-rule="evenodd" />
+        </svg>
+      <% else %>
+        <%# not on the wishlist page %>
+        <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24">
+          <path fill="none" stroke="white" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19.071 13.142L13.414 18.8a2 2 0 0 1-2.828 0l-5.657-5.657A5 5 0 1 1 12 6.072a5 5 0 0 1 7.071 7.07" />
+        </svg>
+      <% end %>
     </a>
   </li>
 
   <li class="footer-menu-item">
     <a href="<%= profile_path %>">
-      <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24">
-        <path class="icon-path" fill="none" stroke="white" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 1 1-8 0a4 4 0 0 1 8 0m-4 7a7 7 0 0 0-7 7h14a7 7 0 0 0-7-7" />
-      </svg>
+      <% if current_page?(profile_path) %>
+        <%# on the profile page %>
+        <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24">
+          <path fill="white" fill-rule="evenodd" d="M8 7a4 4 0 1 1 8 0a4 4 0 0 1-8 0m0 6a5 5 0 0 0-5 5a3 3 0 0 0 3 3h12a3 3 0 0 0 3-3a5 5 0 0 0-5-5z" clip-rule="evenodd" />
+        </svg>
+      <% else %>
+        <%# not on the profile page %>
+        <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24">
+          <g fill="none" stroke="white" stroke-width="2.5">
+            <path stroke-linejoin="round" d="M4 18a4 4 0 0 1 4-4h8a4 4 0 0 1 4 4a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2Z" />
+            <circle cx="12" cy="7" r="3" />
+          </g>
+        </svg>
+      <% end %>
     </a>
   </li>
 </ul>
