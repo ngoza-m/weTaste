@@ -1,7 +1,7 @@
 
 <div class="logo-container text-center py-4">
-  <h1 class="app-logo">WeTaste</h1>
-  <p class="app-slogan">Where taste meets trust.</p>
+  <%= image_tag "logo.svg", alt: "WeTaste Logo", class: "app-logo" %>
+  <p class="app-slogan">Where Friends Meet Taste.</p>
 </div>
 
 <div class="container">
@@ -19,7 +19,7 @@
             <p><%= restaurant.location %></p>
             <!-- <p><%= link_to "Show this restaurant", restaurant %></p> -->
         </div>
-    </div>    
+    </div>
 
 
 <% end %>
@@ -32,4 +32,3 @@
   <span class="material-symbols-outlined">local_cafe</span>
   <!-- to add more icons here -->
 </div>
-

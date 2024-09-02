@@ -21,13 +21,13 @@ Rails.application.routes.draw do
     resources :wishlists, only: [:create, :destroy]
   end
 
-  resources :recommendations, only: [:index, :edit, :update, :destroy] do 
+  resources :recommendations, only: [:index, :edit, :update, :destroy] do
     resources :likes, only: [:create, :destroy]
   end
 
   resources :follows, only: [:create, :destroy]
   resources :wishlists, only: [:destroy]
 end
-# POST restaurants/:id/recommendations/:id/like 
-# POST /recommendations/:id/like 
+# POST restaurants/:id/recommendations/:id/like
+# POST /recommendations/:id/like
 # POST /restaurants/:id/whishlist

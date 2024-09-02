@@ -1,13 +1,12 @@
 class PagesController < ApplicationController
   skip_before_action :authenticate_user!, only: :home
-  
+
   def home
     @restaurants = Restaurant.all
   end
 
   def profile
     @user = current_user
-    
   end
 
   def wishlist
@@ -20,10 +19,12 @@ class PagesController < ApplicationController
     end
   end
 
+
   def recommendationsbycity
     @recs = current_user.recommendations
     @sorted_recs = @recs.group_by{ |rec| rec.restaurant.city }
     @sorted_recs_by_city = @sorted_recs[params[:city]]
   end
+
 
 end
