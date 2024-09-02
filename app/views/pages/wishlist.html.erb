@@ -1,6 +1,6 @@
 <div class="container">
     <div class="wishlist">
-        <h2> My Wishlist </h2>
+        <h5 style="font-weight: bold; text-align: center; margin-top: 30px; margin-bottom: 10px;">WISHLIST</h5>
 
 
         <% @wishlisted_restaurants.each do |restaurant| %>
@@ -8,11 +8,33 @@
             <div class="search-card justify-content-start">
                 <img src="<%= restaurant.photos %>" class="search-card-image">
                 <div class="search-card-content">
+                    <div>
                         <h5><%= link_to restaurant.name, restaurant_path(restaurant) %> </h5>
-                        <p><%= restaurant.location %></p>
+                        <p><i class="fa-solid fa-location-dot fa-xs" style="color: #838486;"> </i> <%= restaurant.location %></p>
                         <% if restaurant.wishlists.count > 0 %>
                             <p> <%= restaurant.wishlists.count %> ❤️</p>
                         <% end %>
+                    </div>
+
+
+                    <div>
+                        <ul>
+                            <li class="dropdown">
+                            <%= image_tag "dots.png", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+                            <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                              <%= link_to "Remove from wishlist", "#", class: "dropdown-item" %>
+                              <%= link_to "Another action", "#", class: "dropdown-item" %>
+                            </div>
+                          </li>
+                        </ul>
+                        <%# end %>
+                    </div>
+
+                        <!-- <div class="search-card-buttons">
+                            <%= form_with url: wishlist_path(restaurant), method: :delete do %>
+                                <%= submit_tag "Remove from wishlist", class: "btn btn-outline-danger" %>
+                            <% end %>
+                        </div> -->
                 </div>
             </div>
             

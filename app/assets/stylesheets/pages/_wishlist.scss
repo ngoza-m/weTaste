@@ -3,3 +3,15 @@
   margin-top: 20px;
   font-weight: bold;
 }
+
+.search-card-content {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+
+
+  li {
+  list-style-type: none;
+  }
+
+}
