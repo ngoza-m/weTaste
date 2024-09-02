@@ -1,0 +1,39 @@
+<% @sorted_recs_by_city %>
+
+<h5 style="font-weight: bold; text-align: center; margin-top: 30px; margin-bottom: 10px;"><%= params[:city].upcase %> RECOMMENDATIONS
+</h5>
+
+
+
+<div class="recommendations-page">
+<div class="row">
+
+    <% @sorted_recs_by_city.each do |rec| %>
+        <div class="card mb-5">
+            <div class="recommendations-image">
+                <%  if rec.photos.attached? %>
+                    <div class="slider-wrapper">
+                        <div class="slider">
+                            <% rec.photos.each_with_index do |photo, i| %>
+                            <img id='slide-<%= i + 1 %>' src=<%= cl_image_path(photo.key, crop: :fill) %> />
+                            <% end %>
+                        </div>
+                        <div class="slider-nav">
+                            <% rec.photos.each_with_index do |photo, i| %>
+                            <a href="#slide-<%= i + 1 %>"></a>
+                            <% end %>
+                        </div>
+                    </div>
+                <% else %>   
+                    <img src="<%= rec.restaurant.photos %>" class="card-img-top" alt="<%= rec.restaurant.name %>">
+                <% end %>
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title"><%= link_to rec.restaurant.name, restaurant_path(rec.restaurant) %></h5>
+                    <p class="card-text"><i class="fa-solid fa-location-dot fa-xs"></i>   <%= rec.restaurant.location %></p>
+                    <p class="card-text" style="font-size: 17px;"> <em>— <%= rec.content %> </em></p>
+                </div>
+            </div>
+        </div>
+    <% end %>
+</div>

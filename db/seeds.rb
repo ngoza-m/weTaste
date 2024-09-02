@@ -138,11 +138,12 @@ Restaurant.create([
   },
   {
     name: "The Pantry",
-    location: "Leidsekruisstraat 21, 1017 RE Amsterdam, Netherlands",
+    location: "Leidsekruisstraat 21, 1017",
     url: "https://www.thepantry.nl/en/",
     photos: "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/19/19/9f/2c/restaurant-1eklas.jpg?w=600&h=-1&s=1",
     phone_number: "020 620 0922"
   }
+
 
   ])
 
@@ -153,6 +154,31 @@ restaurants = Restaurant.all
 restaurants.each do |restaurant|
   restaurant.update(city: "Amsterdam")
 end
+
+puts "creating rome restaurants"
+
+Restaurant.create([
+  {
+    name: "Tonnarello",
+    location: "V. della Paglia, 1/2/3, 00153 Roma ",
+    url: "https://tonnarello.it",
+    photos: "https://lh3.googleusercontent.com/p/AF1QipPWybJzUIA35eC9qreEEOakdhEuRYmJnFNAI0Lo=s1360-w1360-h1020",
+    phone_number: "",
+    city: "Rome"
+  },
+  {
+    name: "Ambrosia Rooftop Restaurant & Bar",
+    location: "V. della Paglia, 1/2/3, 00153 Roma ",
+    url: "https://www.hotelartemide.it/",
+    photos: "https://lh3.googleusercontent.com/p/AF1QipMfHY02yGTP153sDaSsO3pBfth48LmBunki_WpH=s1360-w1360-h1020",
+    phone_number: "+39 06 4899 1763",
+    city: "Rome"
+  },
+
+])
+
+puts "Created #{Restaurant.count} restaurants"
+
 
 #   puts "Destroying old recommendations"
 # # Recommendation.destroy_all

@@ -1,22 +1,24 @@
-<%= render "shared/search" %>
+<div class="container">
+    <%= render "shared/search" %>
 
-<% if @restaurants.present? %>
-    <!-- <h4 style="color: #A9A9A9; margin-top: 10px;"><em>Restaurants in <%= params[:query].capitalize %> </em></h4> -->
+    <% if @restaurants.present? %>
+        <!-- <h4 style="color: #A9A9A9; margin-top: 10px;"><em>Restaurants in <%= params[:query].capitalize %> </em></h4> -->
 
-    <% @restaurants.each do |restaurant| %>
+        <% @restaurants.each do |restaurant| %>
 
-        <div class="search-card justify-content-start">
-            <img src="<%= restaurant.photos %>" class="search-card-image">
-            <div class="search-card-content">
-                    <h5><%= link_to restaurant.name, restaurant_path(restaurant) %> </h5>
-                    <p><%= restaurant.location %></p>
-                    <% if restaurant.wishlists.count > 0 %>
-                        <p> <%= restaurant.wishlists.count %> ❤️</p>
-                    <% end %>
+            <div class="search-card justify-content-start">
+                <img src="<%= restaurant.photos %>" class="search-card-image">
+                <div class="search-card-content">
+                        <h5><%= link_to restaurant.name, restaurant_path(restaurant) %> </h5>
+                        <p><%= restaurant.location %></p>
+                        <% if restaurant.wishlists.count > 0 %>
+                            <p> <%= restaurant.wishlists.count %> ❤️</p>
+                        <% end %>
+                </div>
             </div>
-        </div>
-    <% end %>
+        <% end %>
 
-<% else %>
-    <p> <em>No restaurants found in <%= params[:query] %> </em></p>
-<% end %>
+    <% else %>
+        <p> <em>No restaurants found in <%= params[:query] %> </em></p>
+    <% end %>
+</div>

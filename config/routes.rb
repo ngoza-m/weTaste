@@ -12,6 +12,7 @@ Rails.application.routes.draw do
   # root "posts#index"
   get "profile", to: "pages#profile"
   get "wishlist", to: "pages#wishlist"
+  get "recs", to: "pages#recommendationsbycity"
 
   get "search", to: "pages#city_search"
 
