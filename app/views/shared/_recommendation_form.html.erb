@@ -1,12 +1,30 @@
 <link rel="stylesheet" href="styles.css">
+ <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
 <p class="centered-text">Add to Your <span class="highlight">Amsterdam</span> Favourites</p>
 
 
 <hr>
 
+<div class="restaurant-name"><%= @restaurant.name %></div>
+
+<hr>
+
 <%= simple_form_for [@restaurant, @recommendation] do |f| %>
-    
-    <%= f.button :submit, class: "btn btn-primary mb-3" %>
-    <%= f.input :photos, as: :file, input_html: { multiple: true } %>
-    <%= f.input :content, label: '+ add tags'  '+ add photos' %>
+
+
+   <div class="content-box1">
+    <%= f.input :content, label: false, class: "input-content", placeholder: 'Describe what you love about this place...'  %>
+    <%= f.button :submit, "Add recommendation", class: "button-recommendation" %>
+  </div>
+
+
+
+   <%# <%= f.input :tags, class: "input-tags", label: "Add tags" %>
+
+  <div class="photos">
+ <%= f.input :photos, as: :file, input_html: { multiple: true }, label: "Add photos:" %>
+</div>
+
+  <p>Add tags</p>
+
 <% end %>
