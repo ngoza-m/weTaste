@@ -2,13 +2,10 @@
   <%= image_tag "logo.svg", alt: "WeTaste Logo", class: "app-logo" %>
   <p class="app-slogan">Where Friends Meet Taste.</p>
 </div>
-
 <div class="container">
   <%= render "shared/search" %>
 </div>
-
 <%= render "shared/side_scroll_restaurants", title: "Because You Love It" %>
-
 <div class="container scrollable-section">
   <div class="scrollable-wrapper">
     <% @categories.each do |category| %>
@@ -19,7 +16,5 @@
     <% end %>
   </div>
 </div>
-
 <%= render "shared/side_scroll_restaurants", title: "Latest Added" %>
-
 <%= render "shared/side_scroll_restaurants", title: "Near You" %>
