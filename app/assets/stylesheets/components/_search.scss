@@ -1,19 +1,45 @@
 
-
-
-
 .btn-secondary {
   background-color:#FFD131;
   border: 4px solid #FFD131;
   color: black;
   border-radius: 4px;
+  height: 50px;
   padding: 10px 20px;
+  margin-left: -10px;
+}
+
+.btn-secondary:hover,
+.btn-secondary:focus,
+.btn-secondary:active {
+  background-color: #FFD131;
+  border-color: #FFD131;
+  box-shadow: none;
 }
 
 .form-control {
   border: 3px solid #FFD131 ;
   border-radius: 4px;
-  padding-left: 40px;
-  color: black;
+  padding-left: 45px;
+  color: #888;
+  height: 50px;
+  font-family: 'Lato', sans-serif;
+}
 
+.form-control::placeholder {
+  font-family: 'Lato', sans-serif;
+  color: #888;
+}
+
+.position-relative {
+  position: relative;
+  width: 100%;
+}
+
+.search-icon {
+  position: absolute;
+  left: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #888;
 }
