@@ -14,7 +14,8 @@
   font-family: $headers-font;
   font-size: 16px;
   color: black;
-  width: calc(100% - 45px);
+  // width: calc(100% - 45px);
+  width: 100%;
   box-shadow: none;
 
   &::placeholder {
@@ -70,6 +71,7 @@
   height: 50px;
   padding: 10px 20px;
   margin-left: -10px;
+  padding-left: 25px;
 }
 
 .btn-secondary:hover,
