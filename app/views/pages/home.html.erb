@@ -6,20 +6,25 @@
 <div class="container">
   <%= render "shared/search" %>
 
-  <h3 style="margin-top: 30px;"><em>Places You'll Love</em></h3>
-
-    <% @restaurants.each do |restaurant| %>
-    <%= link_to restaurant do %>
-      <div class="home-card">
-        <img src="<%= restaurant.photos %>" class="home-card-image">
-        <div class="home-card-content">
-          <div class="restaurant-details">
-            <p><%= restaurant.name %></p>
-            <p><%= restaurant.location %></p>
+  <!-- Scrollable Section -->
+  <h3 style="margin-top: 30px;"><em>Because You Love It</em></h3>
+  <div class="scrollable-section">
+    <div class="scrollable-wrapper">
+      <% @restaurants.each do |restaurant| %>
+        <%= link_to restaurant do %>
+          <div class="home-card">
+            <img src="<%= restaurant.photos %>" class="home-card-image">
+            <div class="home-card-content">
+              <div class="restaurant-details">
+                <p><%= restaurant.name %></p>
+                <p><%= restaurant.location %></p>
+              </div>
+            </div>
           </div>
-        </div>
-      </div>
-    <% end %>
-  <% end %>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
 
+  <!-- Repeat the block for more sections -->
 </div>
