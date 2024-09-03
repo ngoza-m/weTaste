@@ -1,3 +1,66 @@
+.search-form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 92%;
+  margin: 0 auto;
+}
+
+
+.search-input {
+  border: 1px solid $sunshine;
+  border-radius: 10px 0 0 10px;
+  height: 45px;
+  padding-left: 20px;
+  font-family: $headers-font;
+  font-size: 16px;
+  color: black;
+  width: calc(100% - 45px);
+  box-shadow: none;
+
+  &::placeholder {
+    color: rgba(80, 80, 80, 0.5);
+    opacity: 1; // ensure the placeholder color displays correctly across all browsers
+  }
+
+  &:focus {
+    border-color: $sunshine; // same as the current border color
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(255, 209, 49, 0.5); // apply a glow effect
+
+    // target the adjacent button when the input is focused
+    & + .search-button {
+      border-color: $sunshine; // match the input field's border color
+      box-shadow: 0 0 0 3px rgba(255, 209, 49, 0.5); // same glow effect
+    }
+  }
+}
+
+.search-button {
+  border: 1px solid $sunshine;
+  border-radius: 0 10px 10px 0;
+  background-color: $sunshine;
+  color: $ink;
+  height: 45px;
+  width: 45px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &:focus {
+    border-color: $sunshine; // match the input field's border color
+    box-shadow: 0 0 0 3px rgba(255, 209, 49, 0.5); // apply the glow effect
+    outline: none; // remove the default outline
+  }
+}
+
+.search-button i {
+  font-size: 16px;
+}
+
+.search-button:hover {
+  background-color: $sunshine-over;
+  border-color: $sunshine-over;
 
 .btn-secondary {
   background-color:#FFD131;
@@ -42,4 +105,5 @@
   top: 50%;
   transform: translateY(-50%);
   color: #888;
+
 }

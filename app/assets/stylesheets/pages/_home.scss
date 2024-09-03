@@ -7,21 +7,29 @@ body {
 .logo-container {
   background-color: $canvas;
   width: 300px;
-  margin: 0 auto; // Center the logo within the container
+  margin: 0 auto; // center the logo within the container
   }
 
-  .app-logo {
+.app-logo {
     height: auto;
     display: block;
     width: 100%;
-  }
+}
 
 
-  .app-slogan {
-    font-family: $headers-font;
-    font-size: 16px;
-    font-weight: 300;
-    color: $plum;
-    text-align: right;
-    margin-top: -18px;
-  }
+.app-slogan {
+  font-family: $headers-font;
+  font-size: 16px;
+  font-weight: 300;
+  color: $plum;
+  text-align: right;
+  margin-top: -18px;
+  margin-bottom: 12px;
+}
+
+.scroll-titles {
+  font-family: $body-font;
+  font-size: 14px;
+  font-weight: 400;
+  color: $plum;
+}

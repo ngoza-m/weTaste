@@ -1,0 +1,26 @@
+.category-item {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  background-color: $canvas;
+  border-radius: 15px;
+  font-family: $headers-font;
+  font-weight: bold;
+  color: $ink; /* Adjust text color */
+  font-size: 16px; /* Adjust text size */
+  cursor: pointer; /* Makes the items look clickable */
+  border: 2px solid $border-color;
+
+  &:hover {
+    background-color: $sunshine; /* Highlight on hover */
+  }
+}
+
+.emoji {
+  margin-right: 8px; /* Space between emoji and text */
+  font-size: 20px; /* Adjust size of the emoji */
+}
+
+.title {
+  font-size: 16px; /* Adjust size of the text */
+}
