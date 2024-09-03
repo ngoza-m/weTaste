@@ -3,6 +3,20 @@ class PagesController < ApplicationController
 
   def home
     @restaurants = Restaurant.all
+    @categories = [
+      { emoji: '🥞', title: 'BREAKFAST', link: '/' },
+      { emoji: '🥞', title: 'LUNCH', link: '/' },
+      { emoji: '🥞', title: 'DINNER', link: '/' },
+      { emoji: '🥞', title: 'DINNER', link: '/' },
+      { emoji: '🥞', title: 'DINNER', link: '/' },
+      { emoji: '🥞', title: 'DINNER', link: '/' },
+      { emoji: '🥞', title: 'DINNER', link: '/' },
+      { emoji: '🥞', title: 'DINNER', link: '/' },
+      { emoji: '🥞', title: 'DINNER', link: '/' },
+      { emoji: '🥞', title: 'DINNER', link: '/' },
+      { emoji: '🥞', title: 'DINNER', link: '/' },
+      { emoji: '🥞', title: 'DINNER', link: '/' }
+    ]
   end
 
   def profile

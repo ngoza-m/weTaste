@@ -5,26 +5,21 @@
 
 <div class="container">
   <%= render "shared/search" %>
-
-  <!-- Scrollable Section -->
-  <h3 style="margin-top: 30px;"><em>Because You Love It</em></h3>
-  <div class="scrollable-section">
-    <div class="scrollable-wrapper">
-      <% @restaurants.each do |restaurant| %>
-        <%= link_to restaurant do %>
-          <div class="home-card">
-            <img src="<%= restaurant.photos %>" class="home-card-image">
-            <div class="home-card-content">
-              <div class="restaurant-details">
-                <p><%= restaurant.name %></p>
-                <p><%= restaurant.location %></p>
-              </div>
-            </div>
-          </div>
-        <% end %>
-      <% end %>
-    </div>
-  </div>
-
-  <!-- Repeat the block for more sections -->
 </div>
+
+<%= render "shared/side_scroll_restaurants", title: "Because You Love It" %>
+
+<div class="container scrollable-section">
+  <div class="scrollable-wrapper">
+    <% @categories.each do |category| %>
+      <div class="category-item">
+        <span class="emoji"><%= category[:emoji] %></span>
+        <span class="title"><%= category[:title] %></span>
+      </div>
+    <% end %>
+  </div>
+</div>
+
+<%= render "shared/side_scroll_restaurants", title: "Latest Added" %>
+
+<%= render "shared/side_scroll_restaurants", title: "Near You" %>
