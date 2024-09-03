@@ -25,7 +25,7 @@ restaurants_data = [
     location: "Eerste Sweelinckstraat 9h",
     url: "https://www.franggo.nl",
     photos: "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/19/19/9f/2c/restaurant-1eklas.jpg?w=600&h=-1&s=1",
-   city: "Amsterdam", phone_number: "020 303 1046"
+    city: "Amsterdam", phone_number: "020 303 1046"
   },
   {
     name: "Dignita Vondelpark",
