@@ -1,23 +1,19 @@
 <div class="search-bar row justify-content-center">
-<div class="col-sm-8 my-3">
-    <%= form_with url: search_path, method: :get, class: "d-flex" do %>
-      <div class="position-relative w-100">
-        <i class="fa fa-search search-icon"></i>
-        <%= text_field_tag :query,
-              params[:query],
-              class: "form-control search-input",
-              placeholder: "Enter a city to explore..."
-          %>
-      </div>
-
-
-    <%= form_with url: search_path, method: :get, class: "search-form d-flex" do %>
-      <div class="input-group">
-        <%= text_field_tag :query, params[:query], class: "form-control search-input", placeholder: "Enter a city to explore..." %>
-        <%= button_tag(type: 'submit', class: 'btn btn-secondary search-button') do %>
+  <div class="col-sm-8 my-3">
+      <%= form_with url: search_path, method: :get, class: "d-flex" do %>
+        <div class="position-relative w-100">
+          <i class="fa fa-search search-icon"></i>
+          <%= text_field_tag :query,
+                params[:query],
+                class: "form-control search-input",
+                placeholder: "Enter a city to explore..."
+            %>
+        </div>
+  
+        <%= button_tag(type: 'submit', class: 'btn btn-secondary') do %>
           <i class="fa fa-search"></i>
         <% end %>
-      </div>
-    <% end %>
+      <% end %>
+      <!-- <p style="color: rgba(0, 0, 0, 0.477); padding-top: 5px;"><em>Results...</em></p> -->
   </div>
-</div>
+  </div>

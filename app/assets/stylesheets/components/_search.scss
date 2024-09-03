@@ -15,7 +15,8 @@
   font-family: $headers-font;
   font-size: 16px;
   color: black;
-  width: calc(100% - 45px);
+  // width: calc(100% - 45px);
+  width: 100%;
   box-shadow: none;
 
   &::placeholder {
@@ -61,6 +62,7 @@
 .search-button:hover {
   background-color: $sunshine-over;
   border-color: $sunshine-over;
+}
 
 .btn-secondary {
   background-color:#FFD131;
@@ -70,6 +72,7 @@
   height: 50px;
   padding: 10px 20px;
   margin-left: -10px;
+  padding-left: 25px;
 }
 
 .btn-secondary:hover,
