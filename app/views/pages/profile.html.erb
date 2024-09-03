@@ -33,27 +33,27 @@
 
     
         <div class="recommendations-container">
-        <div class="row">
-            <h5>MY RECOMMENDATIONS</h5>
-        </div>
+            <div class="row">
+                <h5>MY RECOMMENDATIONS</h5>
+            </div>
 
-        <% recs = current_user.recommendations %>
-        <% sorted_recs = recs.group_by{ |rec| rec.restaurant.city } %>
-        <div class="profile-row">
-            <% sorted_recs.each do |city, recs| %>
-                <div class="profile-card" >
-                    <% response = pexels.photos.search(city, per_page: 1) %>
-                    <img src="<%= response.photos[0].src["original"] %>" class="card-img-top" alt="<%= city %>">
-                    <div class="card-body">
-                        <%= form_with url: recs_path, method: :get, class: "d-flex" do %>
-                                <%= hidden_field_tag :city, city %>
-                                <%= submit_tag city, name: "" %>
-                        <% end %>
+            <% recs = current_user.recommendations %>
+            <% sorted_recs = recs.group_by{ |rec| rec.restaurant.city } %>
+            <div class="profile-row">
+                <% sorted_recs.each do |city, recs| %>
+                    <div class="profile-card" >
+                        <% response = pexels.photos.search(city, per_page: 1) %>
+                        <img src="<%= response.photos[0].src["original"] %>" class="card-img-top" alt="<%= city %>">
+                        <div class="card-body">
+                            <%= form_with url: recs_path, method: :get, class: "d-flex" do %>
+                                    <%= hidden_field_tag :city, city %>
+                                    <%= submit_tag city, name: "" %>
+                            <% end %>
+                        </div>
                     </div>
-                </div>
-            <% end %>
+                <% end %>
+            </div>
         </div>
-    </div>
     </div>
 
 
