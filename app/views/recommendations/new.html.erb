@@ -1,1 +1,12 @@
+<link rel="stylesheet" href="styles.css">
+ <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+<p class="centered-text">Add to Your <span class="highlight"> <%= @restaurant.city %></span> Favourites</p>
+
+
+<hr>
+
+<div class="restaurant-name"><%= @restaurant.name %></div>
+
+<hr>
+
 <%= render "shared/recommendation_form" %>

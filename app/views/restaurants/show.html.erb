@@ -1,49 +1,79 @@
-<h2><%= @restaurant.name %></h2>
-<p><%= @restaurant.location %></p>
-<p><%= @restaurant.phone_number %></p>
+<div class="container">
+    <div class="restaurant-show">
+        <h2><%= @restaurant.name %></h2>
+        <p><%= @restaurant.location %></p>
+        <p><%= @restaurant.phone_number %></p>
 
 
 
-
-<% if @user_restaurant_wishlist %>
-    <%= button_to "Remove from Wishlist", restaurant_wishlist_path(@restaurant, @user_restaurant_wishlist), method: :delete, class: "btn btn-danger mb-3" %>
-<% else %>
-    <%= simple_form_for [@restaurant, @wishlist] do |f| %>
-        <%= f.submit "Add to Wishlist", class: "btn btn-primary mb-3" %>
-    <% end %>
-<% end %>
-
-<%= link_to "Add a Recommendation", new_restaurant_recommendation_path(@restaurant, @recommendation), class: "btn btn-primary mb-3"   %>
-
-
-
-<p> ❤️ <%= Wishlist.where(restaurant_id: @restaurant.id).count %> wishlisted </p>
-
-<h2> Recommendations </h2>
-<% if @recommendations.empty? %>
-    <p> No recommendations yet </p>
-<% else %>
-    <% @recommendations.each do |recommendation| %>
-        <p class="m-0"> <%= recommendation.content %> </p>
-        <small><em> —<%= recommendation.user.email %> </em></small>
-        <% if current_user.recommendations.include?(recommendation) %>
-            <div class="notification-actions">
-                <a href=<%= edit_recommendation_path(recommendation) %>> <i class="fas fa-pencil-alt"></i></a>
-                <%= button_to recommendation_path(recommendation), method: :delete, data: { confirm: 'Are you sure?' } do %> 
-                <i class="far fa-trash-alt"></i> 
+        <div class="restaurant-page-buttons">
+        <% if @user_restaurant_wishlist %>
+            <%= button_to restaurant_wishlist_path(@restaurant, @user_restaurant_wishlist), method: :delete do %>
+            <i class="fa-solid fa-heart fa-xl" style="color: #f06c6c;"></i>
+            <% end %>
+        <% else %>
+            <%= simple_form_for [@restaurant, @wishlist] do |f| %>
+                <%= button_tag(type: 'submit') do %>
+                    <i class="fa-regular fa-heart fa-xl" style="color: #f06c6c;"></i>
                 <% end %>
-            </div>
-        <% end %>
-    <% end %>
-
-    <h2> Photos </h2>
-    
-    <% @recommendations.each do |recommendation| %>
-        <% if recommendation.photos.attached? %>
-            <% recommendation.photos.each do |photo| %>
-                <%= image_tag photo %>
             <% end %>
         <% end %>
-    <% end %>
 
-<% end %>
+
+        <%= link_to new_restaurant_recommendation_path(@restaurant, @recommendation) do  %>
+            <i class="fa-regular fa-square-plus fa-xl" style="color: #f06c6c;"></i>
+        <% end %>
+        </div>
+
+
+
+        <p> <%= Wishlist.where(restaurant_id: @restaurant.id).count %> wishlisted </p>
+
+        <h2> Recommendations </h2>
+        <% if @recommendations.empty? %>
+            <p> No recommendations yet </p>
+        <% else %>
+            <% @recommendations.each do |recommendation| %>
+                <p class="m-0"> <%= recommendation.content %> </p>
+                <small><em> —<%= recommendation.user.email %> </em></small>
+                <% if current_user.recommendations.include?(recommendation) %>
+                    <div class="notification-actions">
+                        <a href=<%= edit_recommendation_path(recommendation) %>> <i class="fas fa-pencil-alt"></i></a>
+                        <%= button_to recommendation_path(recommendation), method: :delete, data: { confirm: 'Are you sure?' } do %> 
+                        <i class="far fa-trash-alt"></i> 
+                        <% end %>
+                    </div>
+                <% end %>
+            <% end %>
+
+            
+            <h2> Photos </h2>
+            
+            <% @recommendations.each do |recommendation| %>
+                <% if recommendation.photos.attached? %>
+                    <% recommendation.photos.each do |photo| %>
+                        <%= image_tag photo %>
+                    <% end %>
+                <% end %>
+            <% end %>
+            
+
+            <% if @restaurant.tags.any? %>
+            <h2>Great For:</h2>
+
+            <% sort_tags = @restaurant.tags %>
+            <% sort_tags = sort_tags.sort_by(&:taggings_count).reverse.uniq %>
+            
+            <div class="tags-container">
+                <% sort_tags.each do |tag| %>
+                <div class="tag" >
+                    <p> <%= tag.name %> </p>
+                </div>
+                <% end %>
+            </div>
+            <% end %>
+
+
+        <% end %>
+    </div>
+</div>
