@@ -28,5 +28,97 @@
 
 .restaurant-page-buttons {
     display: flex;
-    // margin: 20px;
+
+}
+
+.restaurant-show-info{
+
+  justify-content: space-between;
+  color: white;
+  width: 100%;
+  height: 250px;
+  gap: 0px;
+  position: relative;
+
+
+
+}
+.styled-h2 {
+  margin-bottom: 20px!important;
+}
+.with-overlay {
+  position: relative;
+}
+
+.with-overlay::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.1);
+  z-index: 1;
+}
+
+.with-overlay > * {
+  position: relative;
+  z-index: 2;
+}
+
+.name-and-location {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+align-items: center;
+flex-direction: column;
+position: absolute;
+bottom: 0;
+text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+
+}
+
+.restaurant-page-buttons{
+  position: absolute;
+  top: 10px;
+  right: 22px;
+  display: flex;
+  gap: 5px;
+  margin-left: 5px;
+  background-color: transparent;
+}
+
+.restaurant-favorite-button{
+  position: absolute;
+  top: 3px;
+  right: 22px;
+  display: flex;
+  margin-top: 1px;
+  gap: 5px;
+  margin-left: 5px;
+  background-color: transparent!important;
+}
+
+h2 {
+  font-size: 25px;
+  text-align: center;
+  margin-top: 5px;
+  margin-bottom: 30px;
+  gap: 0;
+
+
+
+}
+
+
+.restaurant-info{
+
+  margin-block-start: 0;
+  margin-block-end: 0;
+  text-align:center;
+}
+
+.restaurant-phone-info{
+  margin-bottom: 12px;
+  text-align:center;
 }
