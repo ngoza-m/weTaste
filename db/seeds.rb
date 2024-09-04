@@ -25,7 +25,7 @@ restaurants_data = [
     location: "Wibautstraat 196",
     url: "https://www.benjis.amsterdam",
     photos: "",
-    city: Amsterdam, phone_number: "+31 20 223 8787",
+    city: "Amsterdam", phone_number: "+31 20 223 8787",
     category: "Breakfast"
   },
 
