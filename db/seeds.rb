@@ -7,8 +7,9 @@
 #   ["Action", "Comedy", "Drama", "Horror"].each do |genre_name|
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
-puts "Destroying old restaurants"
+require 'open-uri'
 
+puts "Destroying old restaurants"
 
 Wishlist.destroy_all
 Recommendation.destroy_all
@@ -17,16 +18,27 @@ Recommendation.destroy_all
 
 Restaurant.destroy_all
 
-
 puts "Creating new restaurants"
 restaurants_data = [
   {
-    name: "Franggo De Pijp",
+    name: "Benji's Oost",
+    location: "Wibautstraat 196",
+    url: "https://www.benjis.amsterdam",
+    photos: "",
+    city: Amsterdam, phone_number: "+31 20 223 8787",
+    category: "Breakfast"
+  },
+
+
+   {
+
+   name: "Franggo De Pijp",
     location: "Eerste Sweelinckstraat 9h",
     url: "https://www.franggo.nl",
     photos: "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/19/19/9f/2c/restaurant-1eklas.jpg?w=600&h=-1&s=1",
     city: "Amsterdam", phone_number: "020 303 1046"
   },
+
   {
     name: "Dignita Vondelpark",
     location: "Koninginneweg 218",
@@ -207,4 +219,3 @@ puts "Created #{Restaurant.count} restaurants"
 #   ])
 
 #   puts "Created recommendation restaurants"
-

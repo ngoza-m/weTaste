@@ -1,6 +1,7 @@
 class Restaurant < ApplicationRecord
   has_many :recommendations, dependent: :destroy
   has_many :wishlists, dependent: :destroy
+  has_one_attached :photo
 
   include PgSearch::Model
   pg_search_scope :search_by_location,
