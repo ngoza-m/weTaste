@@ -6,8 +6,8 @@
   border-radius: 15px;
   font-family: $headers-font;
   font-weight: bold;
-  color: $ink; /* Adjust text color */
-  font-size: 16px; /* Adjust text size */
+  color: $ink; /* adjust text color */
+  font-size: 16px; /* adjust text size */
   cursor: pointer; /* Makes the items look clickable */
   border: 2px solid $border-color;
 
@@ -17,10 +17,10 @@
 }
 
 .emoji {
-  margin-right: 8px; /* Space between emoji and text */
-  font-size: 20px; /* Adjust size of the emoji */
+  margin-right: 8px; /* space between emoji and text */
+  font-size: 20px; /* adjust size of the emoji */
 }
 
 .title {
-  font-size: 16px; /* Adjust size of the text */
+  font-size: 16px; /* adjust size of the text */
 }
