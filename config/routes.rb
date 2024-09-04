@@ -14,7 +14,6 @@ Rails.application.routes.draw do
   get "wishlist", to: "pages#wishlist"
   get "recs", to: "pages#recommendationsbycity"
   get "nearby", to: "restaurants#nearby"
-
   get "search", to: "pages#city_search"
 
   resources :restaurants, only: [:new, :index, :show] do

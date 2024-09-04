@@ -1,0 +1,27 @@
+.recommendation-card {
+    display: flex;
+    flex-direction: row;
+    margin: 0 20px;
+
+    img {
+        width: 55px;
+        height: 55px;
+        border-radius: 50%;
+        object-fit: cover;
+    }
+
+    .recommendation-content {
+        margin-left: 15px;
+    }
+
+    p {
+        margin-bottom: 5px;
+        font-size: 13.5px;
+    }
+}
+
+.recommendation-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
