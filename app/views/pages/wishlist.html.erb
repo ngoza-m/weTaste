@@ -5,42 +5,43 @@
 
         <% @wishlisted_restaurants.each do |restaurant| %>
 
-                     <%= link_to restaurant_path(restaurant), class: "search-card-link" do %>
-              <div class="search-card justify-content-start">
+        <div class="search-card justify-content-start">
+                <%= link_to restaurant_path(restaurant), class: "search-card-link" do %>
                 <img src="<%= restaurant.photos %>" class="search-card-image">
                 <div class="search-card-content">
                   <div>
                     <h5><%= restaurant.name %></h5>
-                    <p><i class="fa-solid fa-location-dot fa-xs" style="color: #838486;"></i> <%= restaurant.location %></p>
+                    <p><i class="fa-solid fa-location-dot fa-xs" style="color: #ffffff;"></i> <%= restaurant.location %></p>
                     <% if restaurant.wishlists.count > 0 %>
                       <p><%= restaurant.wishlists.count %> ❤️</p>
                     <% end %>
                   </div>
                 </div>
-              </div>
-            <% end %>
 
-
-                    <div>
-                        <ul>
-                            <li class="dropdown">
-                            <%= image_tag "dots.png", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
-                            <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                              <%= link_to "Remove from wishlist", "#", class: "dropdown-item" %>
-                              <%= link_to "Another action", "#", class: "dropdown-item" %>
-                            </div>
-                          </li>
-                        </ul>
-                        <%# end %>
+                <% end %>
+                
+                <div class="dropdown-wrapper">
+                      <div class="dropdown">
+                      <%= image_tag "dots.png", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false, role: "button" %>
+                      <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                        <%= link_to "Remove from wishlist", "#", class: "dropdown-item" %>
+                        <%= link_to "Add a recommendation", "#", class: "dropdown-item" %>
+                      </div>
                     </div>
+              </div>
+
+              </div>
+
+
+           
+
 
                         <!-- <div class="search-card-buttons">
                             <%= form_with url: wishlist_path(restaurant), method: :delete do %>
                                 <%= submit_tag "Remove from wishlist", class: "btn btn-outline-danger" %>
                             <% end %>
                         </div> -->
-                </div>
-            </div>
+   
 
         <% end %>
 

@@ -30,6 +30,7 @@
         <p> <%= Wishlist.where(restaurant_id: @restaurant.id).count %> wishlisted </p>
 
         <h2> Recommendations </h2>
+        <%= link_to "See All",  restaurant_recommendations_path(@restaurant) %>
         <% if @recommendations.empty? %>
             <p> No recommendations yet </p>
         <% else %>

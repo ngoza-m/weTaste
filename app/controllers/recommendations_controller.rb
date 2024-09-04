@@ -36,6 +36,11 @@ class RecommendationsController < ApplicationController
     redirect_to restaurant_path(@recommendation.restaurant)
   end
 
+  def index
+    @restaurant = Restaurant.find(params[:restaurant_id])
+    @recommendations = @restaurant.recommendations
+  end
+
   private
 
   def recommendation_params

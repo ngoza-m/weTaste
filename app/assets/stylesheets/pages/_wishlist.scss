@@ -8,10 +8,35 @@
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+}
 
+.wishlist {
 
   li {
-  list-style-type: none;
+    list-style-type: none;
+  }
+
+  .search-card {
+    position: relative;
+    z-index: 0;
+  }
+
+  .dropdown-wrapper {
+    position: absolute;
+    top: 0;
+    right: -6px;
+    padding: 10px;
+    z-index: 1;
+
+    .avatar {
+      width: 40px;
+      filter: brightness(3) invert(0) saturate(3);
+      border-radius: 50%;
+    }
+  }
+
+  img {
+    filter: brightness(0.5);
   }
 
 }

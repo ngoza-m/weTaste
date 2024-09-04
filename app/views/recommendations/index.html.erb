@@ -1,0 +1,34 @@
+<div>
+<p class="centered-text"><span class="highlight"> <%= @recommendations.count %> Recommendations</span></p>
+<div class="back-button">
+    <%= link_to restaurant_path(@restaurant) do %>
+        <i class="fa-solid fa-arrow-left fa-xl" style="color: #f06c6c;"></i>
+    <% end %>
+</div>
+
+<hr>
+
+
+<% @recommendations.each do |recommendation| %>
+    <div class="recommendation-card">
+        <% if current_user.photo.attached? %>
+           <div> <%= image_tag current_user.photo %> </div>
+        <% end %>
+        <div class="recommendation-content">
+            <p style="font-weight: bold; color: #6A497A"> <%= recommendation.user.first_name %> <%= recommendation.user.last_name %> </p>
+            <p style="color: #5a5a5a;"> <%= recommendation.content %> </p>
+        </div>
+        <!-- <% if current_user.recommendations.include?(recommendation) %>
+            <div class="notification-actions">
+                <a href=<%= edit_recommendation_path(recommendation) %>> <i class="fas fa-pencil-alt"></i></a>
+                <%= button_to recommendation_path(recommendation), method: :delete, data: { confirm: 'Are you sure?' } do %> 
+                <i class="far fa-trash-alt"></i> 
+                <% end %>
+            </div>
+        <% end %> -->
+    </div>
+    
+<hr>
+
+<% end %>
+
