@@ -24,7 +24,7 @@ restaurants_data = [
     name: "Benji's Oost",
     location: "Wibautstraat 196",
     url: "https://www.benjis.amsterdam",
-    photos: "",
+    photos: "https://lh3.googleusercontent.com/p/AF1QipMfHY02yGTP153sDaSsO3pBfth48LmBunki_WpH=s1360-w1360-h1020",
     city: "Amsterdam", phone_number: "+31 20 223 8787",
     category: "Breakfast"
   },
