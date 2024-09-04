@@ -1,8 +1,6 @@
 .content-box1 {
+  text-align: left;
 
-  .button-recommendation {
-    // margin-left: 10px;
-  }
 }
 
 .rec-container {
@@ -31,7 +29,6 @@
   background-color: #f06C6C !important;
 }
 
-
 .highlight {
   color: #f06C6C;
 }
@@ -43,7 +40,6 @@
 }
 
 .input-content {
-
   width: 400px;
   height: 400px;
   padding: 15px;
@@ -51,7 +47,6 @@
   border: 1px solid #ccc;
   overflow: auto;
   font-size: 16px;
-
 }
 
 .restaurant-name {
@@ -70,13 +65,12 @@ width: 364px;
 border-color: $sunshine;
 height: 250px;
 border: 3px solid $sunshine;
+padding-left: 10px;
 justify-content: center;
 align-items: center;
 display: flex;
-
-// margin: 20px ;
-
 }
+
 textarea.form-control::placeholder {
   color: darkgray;
   opacity: 1;
