@@ -31,12 +31,13 @@
 
         <%# <p> <%= Wishlist.where(restaurant_id: @restaurant.id).count wishlisted </p> %>
 
-        <h2> Recommendations </h2>
-        <%= link_to "See All",  restaurant_recommendations_path(@restaurant) %>
+        <h2> Recommendations: </h2>
+        <%= link_to "See All",  restaurant_recommendations_path(@restaurant),class: "my-custom-class" %>
         <% if @recommendations.empty? %>
             <p> No recommendations yet </p>
         <% else %>
             <% @recommendations.each do |recommendation| %>
+            <div class="recommendation-box p-3 mb-3 border rounded">
                 <p class="m-0"> <%= recommendation.content %> </p>
                 <small><em> —<%= recommendation.user.email %> </em></small>
                 <% if current_user.recommendations.include?(recommendation) %>
@@ -47,10 +48,11 @@
                         <% end %>
                     </div>
                 <% end %>
+                </div>
             <% end %>
 
 
-            <h2> Photos </h2>
+            <h2> Photos: </h2>
 
             <% @recommendations.each do |recommendation| %>
                 <% if recommendation.photos.attached? %>
