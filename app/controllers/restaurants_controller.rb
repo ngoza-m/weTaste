@@ -34,7 +34,7 @@ class RestaurantsController < ApplicationController
   end
 
   def nearby
-    @location = current_user.location
+    @location = current_user.location.capitalize
     @restaurants = Restaurant.where(city: @location)
 
     @markers = @restaurants.geocoded.map do |restaurant|
