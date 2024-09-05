@@ -20,144 +20,152 @@ Restaurant.destroy_all
 
 puts "Creating new restaurants"
 restaurants_data = [
-  {
-    name: "Benji's Oost",
-    location: "Wibautstraat 196",
-    url: "https://www.benjis.amsterdam",
-<<<<<<< HEAD
-    photos: "",
-=======
-    photos: "https://lh3.googleusercontent.com/p/AF1QipMfHY02yGTP153sDaSsO3pBfth48LmBunki_WpH=s1360-w1360-h1020",
->>>>>>> master
-    city: "Amsterdam", phone_number: "+31 20 223 8787",
-    category: "Breakfast"
-  },
-
 
    {
-
+  # 1
    name: "Franggo De Pijp",
     location: "Eerste Sweelinckstraat 9h",
+    city: "Amsterdam",
+    phone_number: "+31 203 031 046",
     url: "https://www.franggo.nl",
-    photos: "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/19/19/9f/2c/restaurant-1eklas.jpg?w=600&h=-1&s=1",
-    city: "Amsterdam", phone_number: "020 303 1046"
+    photos: "https://cdn.sanity.io/images/i34ufiqg/production/f59fc43083e3067d0a7d5188843e60a6d4810868-5760x3840.jpg?q=35&h=1000&auto=format",
+    category: "Casual"
   },
-
   {
+    # 2
     name: "Dignita Vondelpark",
     location: "Koninginneweg 218",
+    city: "Amsterdam",
+    phone_number: "+31 220 221 458",
     url: "https://eatwelldogood.nl",
-    photos: "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/08/a1/5f/05/dignita.jpg?w=2000&h=-1&s=1",
-   city: "Amsterdam", phone_number: "020 221 458"
+    photos: "https://lh3.googleusercontent.com/p/AF1QipOM2_wNVX7GrxlaVqYGekaNbvZdwGtGhxN69ow=s1360-w1360-h1020",
+    category: "Sustainable"
   },
   {
+    # 3
     name: "Vinkeles",
     location: "Keizersgracht 384",
+    city: "Amsterdam",
+    phone_number: "+31 205 302 010",
     url: "https://www.vinkeles.com",
     photos: "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/2a/1d/68/23/interior-restaurant-vinkeles.jpg?w=1400&h=-1&s=1",
-   city: "Amsterdam", phone_number: "020 530 2010"
+    category: "Fine Dining"
   },
   {
-    name: "Ciel Bleu Restaurant",
+    # 4
+    name: "Benji's Oost",
+    location: "Wibautstraat 196",
+    city: "Amsterdam",
+    phone_number: "+31 202 238 787",
+    url: "https://www.benjis.amsterdam",
+    photos: "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/19/cf/22/05/benji-s-east.jpg?w=1400&h=-1&s=1",
+    category: "Breakfast"
+  },
+  {
+    # 5
+    name: "Ciel Bleu",
     location: "Ferdinand Bolstraat 333",
+    city: "Amsterdam",
+    phone_number: "+31 206 787 450",
     url: "https://www.cielbleu.nl",
     photos: "https://lh3.googleusercontent.com/p/AF1QipM3slhyjQN0j0nLqkbkNfqnO7vG8asWPWOMPY6D=s1360-w1360-h1020",
-   city: "Amsterdam", phone_number: "020 678 7450"
+    category: "Fine Dining"
   },
   {
+    # 6
     name: "Dimitri's Restaurant",
     location: "Insulindeweg 1",
+    city: "Amsterdam",
+    phone_number: "+31 203 044 654",
     url: "https://www.dimitris.amsterdam/",
-    photos: "https://lh3.googleusercontent.com/p/AF1QipOJwnSK0IYtrmJgM7k3VdIvm5Q96bGCcns3HPwh=s1360-w1360-h1020",
-   city: "Amsterdam", phone_number: "06 83705890"
+    photos: "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/15/63/2b/c8/restaurant.jpg?w=1400&h=-1&s=1",
+    category: "Dinner"
   },
-
   {
-    name: "Yam yam trattoria-pizzeria",
-    location: "Frederik Hendrikstraat 90",
+    # 7
+    name: "YamYam Trattoria Pizzeria",
+    location: "Frederik Hendrikstraat 88 - 90",
+    city: "Amsterdam",
+    phone_number: "+31 206 815 097",
     url: "https://www.yam-yam-trattoria-pizzeria.nl/",
     photos: "https://lh3.googleusercontent.com/p/AF1QipPFXFn0MQb9UGkDlM45qSTaXrXN2as4Oj-tNmrb=s1360-w1360-h1020",
-   city: "Amsterdam", phone_number: "020 681 5097"
-  },
-
-  {
-    name: "Mana Mana West",
-    location: "Frederik Hendrikplantsoen 36",
-    url: "https://mana-mana.nl",
-    photos: "https://lh3.googleusercontent.com/p/AF1QipNAaf3-CxZNsAo1_l6smh7jY6vrJzHX2XeaTbzd=s1360-w1360-h1020",
-   city: "Amsterdam", phone_number: "020 845 8867"
-
-  },
-
-  {
-    name: "Mondi Amsterdam New West",
-    location: "Aletta Jacobslaan 7",
-    url: "https://www.mondirestaurant.com/",
-    photos: "https://lh3.googleusercontent.com/p/AF1QipNAaf3-CxZNsAo1_l6smh7jY6vrJzHX2XeaTbzd=s1360-w1360-h1020",
-   city: "Amsterdam", phone_number: "020 820 7832"
-
+    category: "Italian"
   },
   {
-    name: "Bar Bouche",
-    location: "Wibautstraat 107h",
-    url: "https://www.barbouche.nl/",
-    photos: "https://lh3.googleusercontent.com/p/AF1QipMfCTzvyUzf2Gg2ocVIupiXaZ2mNw5YGw6yq1WT=s1360-w1360-h1020",
-   city: "Amsterdam", phone_number: "020 280 7040"
+    # 8
+    name: "De Plantage",
+    location: "Plantage Kerklaan 36",
+    city: "Amsterdam",
+    phone_number: "+31 207 606 800",
+    url: "https://www.caferestaurantdeplantage.nl",
+    photos: "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0f/53/f7/91/photo2jpg.jpg?w=600&h=-1&s=1",
+    category: "Breakfast"
   },
+  {
+    # 9
+    name: "Vegan Junk Food Bar",
+    location: "Marie Heinekenplein 9",
+    city: "Amsterdam",
+    phone_number: "+31 6 18 95 50 02",
+    url: "https://www.veganjunkfoodbar.com",
+    photos: "https://lh3.googleusercontent.com/p/AF1QipOQJXSR7IuOO4aCcps3pSy_sz2yvaeY7TakjA9Q=s1360-w1360-h1020",
+    category: "Vegetarian"
+  },
+  {
+    # 10
+    name: "de Tulp",
+    location: "Marie Heinekenplein 33",
+    city: "Amsterdam",
+    phone_number: "+31 206 704 661",
+    url: "https://tulp.amsterdam",
+    photos: "https://lh3.googleusercontent.com/p/AF1QipO175Mlje3pt3AALxi503N8BQ9LE607EiXzX54O=s1360-w1360-h1020",
+    category: "Bar"
+  },
+  {
+    #1 1
+    name: "SUGARBAR by Tudy's Kitchen",
+    location: "De Clercqstraat 48",
+    city: "Amsterdam",
+    url: "https://www.tudyssugarbar.com",
+    photos: "https://www.iamsterdam.com/_next/image?url=https%3A%2F%2Fmedia.iamsterdam.com%2Fw_907%2Ch_514%2F735lwme0yrhd-img-6454.webp&w=1920&q=75",
+    category: "Dessert"
+  },
+  {
+    # 12
+    name: "Dona",
+    location: "Nicolaas Beetsstraat 47H",
+    city: "Amsterdam",
+    phone_number: "+31 657 736 955",
+    url: "https://www.donarestaurant.com",
+    photos: "https://lh3.googleusercontent.com/p/AF1QipNCTwqUxbxCUeM6tMhIOYy6io3EQYgalCJd2krf=s1360-w1360-h1020",
+    category: "Fine Dining"
+  },
+  {
+    # 13
+    name: "Café Kiebêrt",
+    location: "Address: Marathonweg 2",
+    city: "Amsterdam",
+    phone_number: "+31 208 458 283",
+    url: "https://cafekiebert.nl",
+    photos: "https://lh3.googleusercontent.com/p/AF1QipPoRBdFIHQpnbXSBm0t2jMwgHMLFb15sgrjBA87=s1360-w1360-h1020",
+    category: "Coffee"
+  },
+
   {
     name: "Poppy's Amsterdam",
     location: "Lutmastraat 99",
     url: "https://www.poppysamsterdam.nl/",
+    city: "Amsterdam",
     photos: "https://lh3.googleusercontent.com/p/AF1QipO7XhpOOssy3fPKN1glqrLcT8Wg4rbYkFoG38xp=s1360-w1360-h1020",
-   city: "Amsterdam", phone_number: "020 341 8799"
+    phone_number: "020 341 8799",
+   category: "Vegetarian"
   },
   {
-    name: "Bar Kartel",
-    location: "Overtoom 28",
-    url: "https://bar-kartel.nl/",
-    photos: "https://lh3.googleusercontent.com/p/AF1QipNeeWzxB2IiaP1xU3Tn65WdWQDMxDzDTiPySEmm=s1360-w1360-h1020",
-   city: "Amsterdam", phone_number: "020 765 7010"
-  },
-  {
-    name: "Lavash",
-    location: "Korte Leidsedwarsstraat 119",
-    url: "https://restaurantlavash.nl",
-    photos: "https://lh3.googleusercontent.com/p/AF1QipNX2IznYm_Dqad8-VtRBGFY5mWJVkqkwQci_7Nj=s1360-w1360-h1020",
-   city: "Amsterdam", phone_number: "020 771 4344"
-  },
-  {
-    name: "Silom Thai Brasserie",
-    location: "Voetboogstraat 13,",
-    url: "https://silomthaibrasserie.nl/",
-    photos: "https://lh3.googleusercontent.com/p/AF1QipPP129CXSHmVXi-yH9sSjRyPgbWhxQOrgDMCnVF=s1360-w1360-h1020",
-   city: "Amsterdam", phone_number: "020 244 2894"
-  },
-  {
-    name: "Tasca Bellota",
-    location: "Bickerswerf 2, 1013 KX Amsterdam",
-    url: "https://tascabellota.nl/",
-    photos: "https://lh3.googleusercontent.com/p/AF1QipMVKPqevsOPYmPvfl5NPU12RwGJVViUJUt7qqv_=s1360-w1360-h1020",
-   city: "Amsterdam", phone_number: "020 320 2951"
-  },
-  {
-    name: "Señor Mostachio",
-    location: "Ruysdaelkade 183",
-    url: "https://www.senor-mostachio-amsterdam.nl/",
-    photos: "https://lh3.googleusercontent.com/p/AF1QipOiPi5LD7sT_-BhNxQ_iCSsXV6B9DECQ-3Tq4XR=s1360-w1360-h1020",
-   city: "Amsterdam", phone_number: "06 11628545"
-  },
-  {  name: "3 Trees Cafe",
-    location: "Zieseniskade 26, 1017 RW Amsterdam, Netherlands",
-    url: "https://www.wagyukanata.com/amsterdam",
-    photos: "https://www.telegraph.co.uk/content/dam/Travel/Destinations/Europe/Netherlands/Amsterdam/amsterdam-VanOost-Restaurant-85.jpg",
-   city: "Amsterdam", phone_number: "020-2801334"
-  },
-  {
-    name: "The Pantry",
-    location: "Leidsekruisstraat 21, 1017",
-    url: "https://www.thepantry.nl/en/",
-    photos: "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/19/19/9f/2c/restaurant-1eklas.jpg?w=600&h=-1&s=1",
-   city: "Amsterdam", phone_number: "020 620 0922"
+    name: "Bakery Louf",
+    location:"Bilderdijkstraat 38",
+    url: "https://www.bakkerijlouf.nl",
+    photos: "https://static.wixstatic.com/media/3d7e86_2ad870beac8848a1b1677c0a7b1851f2~mv2.jpg/v1/crop/x_0,y_0,w_1800,h_1211/fill/w_1688,h_1136,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/loof_1%2C5x.jpg",
+    city: "Amsterdam"
   }
 
 
