@@ -8,4 +8,5 @@ class User < ApplicationRecord
   has_many :wishlists
   has_many :recommendations
   has_many :restaurants, through: :wishlists
+  has_many :food_preferences, dependent: :destroy
 end
