@@ -3,31 +3,27 @@
         <h5 style="font-weight: bold; text-align: center; margin-top: 30px; margin-bottom: 10px;">WISHLIST</h5>
 
 
-        <% @wishlisted_restaurants.each do |restaurant| %>
+        <% @wishlisted_restaurants.each do |wishlist| %>
 
         <div class="search-card justify-content-start">
-                <%= link_to restaurant_path(restaurant), class: "search-card-link" do %>
-                <img src="<%= restaurant.photos %>" class="search-card-image">
+                <%= link_to restaurant_path(wishlist.restaurant), class: "search-card-link" do %>
+                <img src="<%= wishlist.restaurant.photos %>" class="search-card-image">
                 <div class="search-card-content">
                   <div>
-                    <h5><%= restaurant.name %></h5>
-                    <p><i class="fa-solid fa-location-dot fa-xs" style="color: #ffffff;"></i> <%= restaurant.location %></p>
-                    <% if restaurant.wishlists.count > 0 %>
-                      <p><%= restaurant.wishlists.count %> ❤️</p>
+                    <h5><%= wishlist.restaurant.name %></h5>
+                    <p><i class="fa-solid fa-location-dot fa-xs" style="color: #ffffff;"></i> <%= wishlist.restaurant.location %></p>
+                    <% if wishlist.restaurant.wishlists.count > 0 %>
+                      <p><%= wishlist.restaurant.wishlists.count %> ❤️</p>
                     <% end %>
                   </div>
                 </div>
 
                 <% end %>
                 
-                <div class="dropdown-wrapper">
-                      <div class="dropdown">
-                      <%= image_tag "dots.png", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false, role: "button" %>
-                      <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                        <%= link_to "Remove from wishlist", "#", class: "dropdown-item" %>
-                        <%= link_to "Add a recommendation", "#", class: "dropdown-item" %>
-                      </div>
-                    </div>
+                <div class="trash">
+                  <%= button_to restaurant_wishlist_path(wishlist.restaurant, wishlist), method: :delete, data: { confirm: 'Are you sure?' } do %> 
+                  <i class="fa-solid fa-trash fa-xs" style="color: #ffffff;"></i>
+                  <% end %>
               </div>
 
               </div>
@@ -37,7 +33,7 @@
 
 
                         <!-- <div class="search-card-buttons">
-                            <%= form_with url: wishlist_path(restaurant), method: :delete do %>
+                            <%= form_with url: wishlist_path(wishlist.restaurant), method: :delete do %>
                                 <%= submit_tag "Remove from wishlist", class: "btn btn-outline-danger" %>
                             <% end %>
                         </div> -->

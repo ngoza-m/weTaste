@@ -26,6 +26,7 @@ Rails.application.routes.draw do
   end
 
   resources :follows, only: [:create, :destroy]
+  
   resources :wishlists, only: [:destroy]
 end
 # POST restaurants/:id/recommendations/:id/like
