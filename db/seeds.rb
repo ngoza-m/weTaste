@@ -20,9 +20,10 @@ Restaurant.destroy_all
 
 puts "Creating new restaurants"
 restaurants_data = [
-  {
-    # 1
-    name: "Franggo De Pijp",
+
+   {
+  # 1
+   name: "Franggo De Pijp",
     location: "Eerste Sweelinckstraat 9h",
     city: "Amsterdam",
     phone_number: "+31 203 031 046",

@@ -5,7 +5,7 @@
 <!-- Scrollable Section -->
 <div class="container scrollable-section">
   <div class="scrollable-wrapper">
-    <% @restaurants.each do |restaurant| %>
+    <% @restaurants.shuffle.each do |restaurant| %>
       <%= link_to restaurant do %>
         <div class="home-card">
           <img src="<%= restaurant.photos %>" class="home-card-image">
