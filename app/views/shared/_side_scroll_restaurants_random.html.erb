@@ -1,0 +1,22 @@
+<div class="container">
+  <h3 class="scroll-titles" style="margin-top: 30px;"><%= title %></h3>
+</div>
+
+<!-- Scrollable Section -->
+<div class="container scrollable-section">
+  <div class="scrollable-wrapper">
+    <% @restaurants.shuffle.each do |restaurant| %>
+      <%= link_to restaurant do %>
+        <div class="home-card">
+          <img src="<%= restaurant.photos %>" class="home-card-image">
+          <div class="home-card-content">
+            <div class="restaurant-details">
+              <p><%= restaurant.name %></p>
+              <p><%= restaurant.location %></p>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+</div>
