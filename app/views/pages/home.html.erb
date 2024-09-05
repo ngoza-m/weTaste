@@ -7,10 +7,10 @@
 </div>
 <%= render "shared/side_scroll_restaurants", title: "Because You Love It" %>
 <div class="container scrollable-section">
-  <div class="scrollable-wrapper">
+  <div class="scrollable-wrapper mt-4">
     <% @categories.each do |category| %>
-      <div class="category-item">
-        <span class="emoji"><%= category[:emoji] %></span>
+      <div class="category-item mb-0">
+        <span class="emoji" style="margin-right: 5px;"><%= category[:emoji] %></span>
         <span class="title"><%= category[:title] %></span>
       </div>
     <% end %>

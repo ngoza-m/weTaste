@@ -3,25 +3,31 @@
   <%= simple_form_for [@restaurant, @recommendation] do |f| %>
     <div class="content-box1">
       <%= f.input :content, label: false, class: "input-content", placeholder: 'Describe what you love about this place...'  %>
-      <%= f.input :tag_list, class: "input-tags",  label: "Add Tags", input_html: { "data-tags-target" => "input"} %>
-      <%= f.button :submit, "Add Recommendation", class: "button-recommendation" %>
+      <%= f.input :tag_list, class: "input-tags",  label: false, input_html: { "data-tags-target" => "input"}, :as => :hidden %>
+      
     </div>
     
       <div class="photos">
         <%= f.input :photos, as: :file, input_html: { multiple: true }, label: "Add Photos:" %>
       </div>
 
-      <div class="tags">
-        
-        <!-- <%= f.button :submit, "+ Tags", class: "button-recommendation"%> -->
+      
+
+      <div style="margin-top: 12px;">
+        <%= f.button :submit, "Add Recommendation", class: "button-recommendation" %>
       </div>
   </div>
   <% end %>
 
-  <% tags = ["Casual-Dining", "Fine-Dining", "Family-Friendly", "Date-Night", "Group-Friendly", "Outdoor-Seating", "Romantic-Atmosphere", "Cozy-Atmosphere"] %>
-  <p style="padding-left: 15px; margin-bottom: 5px;">Add Tags</p>
+  <% tags = [
+              "Casual-Dining", "Fine-Dining", "Family-Friendly", "Date-Night", "Group-Friendly", "Outdoor-Seating", 
+              "Romantic-Atmosphere", "Cozy-Atmosphere", "Happy-Hour", "Trendy-Spot", "Gluten-Free-Options", "Elegant-Setting",
+              "Craftsmanship", "Local-Ingredients", "Vegetarian-Friendly", "Vegan-Friendly" 
+            ] %>
+
+  <p style="padding-left: 15px; margin-bottom: 5px; margin-top: 7px;">Add Tags</p>
   <div class="tags-container">
-    <% tags.each do |tag| %>
+    <% tags.shuffle.each do |tag| %>
       <div class="tag" >
         <p data-tags-target="element" data-action="click->tags#toggle"><%= tag %></p>
       </div>

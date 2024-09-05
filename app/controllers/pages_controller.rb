@@ -4,18 +4,18 @@ class PagesController < ApplicationController
   def home
     @restaurants = Restaurant.all
     @categories = [
-      { emoji: '🥞', title: 'BREAKFAST', link: '/' },
-      { emoji: '🥞', title: 'LUNCH', link: '/' },
-      { emoji: '🥞', title: 'DINNER', link: '/' },
-      { emoji: '🥞', title: 'DINNER', link: '/' },
-      { emoji: '🥞', title: 'DINNER', link: '/' },
-      { emoji: '🥞', title: 'DINNER', link: '/' },
-      { emoji: '🥞', title: 'DINNER', link: '/' },
-      { emoji: '🥞', title: 'DINNER', link: '/' },
-      { emoji: '🥞', title: 'DINNER', link: '/' },
-      { emoji: '🥞', title: 'DINNER', link: '/' },
-      { emoji: '🥞', title: 'DINNER', link: '/' },
-      { emoji: '🥞', title: 'DINNER', link: '/' }
+      { emoji: '🥐', title: 'BREAKFAST', link: '/' },
+      { emoji: '🥗', title: 'LUNCH', link: '/' },
+      { emoji: '🍕', title: 'QUICK-BITES', link: '/' },
+      { emoji: '🍴', title: 'FINE-DINING', link: '/' },
+      { emoji: '🥦', title: 'VEGETARIAN', link: '/' },
+      { emoji: '🍰', title: 'DESSERT', link: '/' },
+      { emoji: '🍸', title: 'BAR', link: '/' },
+      { emoji: '🍔', title: 'CASUAL', link: '/' },
+      { emoji: '🍝', title: 'ITALIAN', link: '/' },
+      { emoji: '🥖', title: 'FRENCH', link: '/' },
+      { emoji: '🧀', title: 'GOURMET', link: '/' },
+      { emoji: '🍽️', title: 'DINNER', link: '/' }
     ]
   end
 

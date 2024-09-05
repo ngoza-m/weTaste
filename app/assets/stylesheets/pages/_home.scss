@@ -33,3 +33,24 @@ body {
   font-weight: 400;
   color: $plum;
 }
+
+.category-item {
+  display: flex;
+  width: fit-content !important;
+  justify-content: center;
+  padding: 10px;
+  padding-left: 15px;
+  padding-right: 15px;
+  border: 2.5px solid #B6CE42;
+  border-radius: 25px;
+
+  .title {
+    // width: 120px;
+    overflow: hidden;
+    white-space: nowrap;
+    font-size: 12px;
+    align-content: center;
+  }
+
+}
+

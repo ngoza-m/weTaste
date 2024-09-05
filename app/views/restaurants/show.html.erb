@@ -8,22 +8,25 @@
         <p class="restaurant-phoneinfo"><%= @restaurant.phone_number %></p>
 </div>
 
+        <div class="back-button"><button onclick="history.back()"> < </button>        </div>
+
+
         <div class="restaurant-page-buttons">
         <% if @user_restaurant_wishlist %>
             <%= button_to restaurant_wishlist_path(@restaurant, @user_restaurant_wishlist), method: :delete, class: "restaurant-favorite-button" do %>
-            <i class="fa fa-heart" aria-hidden="true" style="color: #f06c6c;"></i>
+            <i class="fa fa-heart fa-xl" aria-hidden="true" style="color: #ffffff;"></i>
             <% end %>
         <% else %>
             <%= simple_form_for [@restaurant, @wishlist] do |f| %>
-               <%= button_tag(type: 'submit', style: 'background-color: transparent;') do %>
-                    <i class="fa fa-heart" aria-hidden="true" style="color: #f06c6c;"></i>
+                <%= button_tag(type: 'submit', style: 'background-color: transparent;') do %>
+                    <i class="fa-regular fa-heart fa-xl" aria-hidden="true" style="color: #ffffff;"></i>
                 <% end %>
             <% end %>
         <% end %>
 
 
         <%= link_to new_restaurant_recommendation_path(@restaurant, @recommendation) do  %>
-            <i class="fa-regular fa-square-plus fa-xl" style="color: #f06c6c; margin-top: 2px;"></i>
+            <i class="fa-regular fa-square-plus fa-xl" style="color: #ffffff; margin-top: 2px;"></i>
         <% end %>
         </div>
 </div>
