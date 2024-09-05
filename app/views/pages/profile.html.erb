@@ -1,24 +1,50 @@
 <% require 'pexels' %>
 <% pexels = Pexels::Client.new(ENV['PEXELS_API_KEY']) %>
 
-<%= link_to "Log out", destroy_user_session_path, data: {turbo_method: :delete}, class: "dropdown-item" %>
+<!-- Profile Header -->
+<%= link_to "Log out", destroy_user_session_path, data: { turbo_method: :delete }, class: "dropdown-item" %>
 <div class="profile-header">
+  <!-- Profile Picture -->
   <% if current_user.photo.attached? %>
-    <div class="profile-avatar"><%= cl_image_tag @user.photo.key, :width=>130, :crop=>"fill" %></div>
+    <div class="profile-avatar">
+      <%= cl_image_tag @user.photo.key, width: 130, crop: "fill", class: "profile-pic" %>
+    </div>
   <% else %>
-    <div class="profile-avatar"><%= image_tag "https://marketplace.canva.com/EAFOWUXOOvs/1/0/1600w/canva-green-gradient-minimalist-simple-instagram-profile-picture-tBlf3wVYGhg.jpg", :width=>130, :crop=>"fill"  %> </div>
+    <div class="profile-avatar">
+      <%= image_tag "https://marketplace.canva.com/EAFOWUXOOvs/1/0/1600w/canva-green-gradient-minimalist-simple-instagram-profile-picture-tBlf3wVYGhg.jpg", width: 130, crop: "fill", class: "profile-pic" %>
+    </div>
   <% end %>
-  <div class="profile-bio">
-    <h5><%= current_user.first_name %> <%= current_user.last_name %></h5>
-    <p style="margin-bottom: 5px;"><strong>Based in: </strong><%=  current_user.location  %></p>
-    <p><em> <%= current_user.bio %> </em></p>
+
+  <!-- User Info and Follow Button -->
+  <div class="profile-info">
+    <h2><%= current_user.first_name %> <%= current_user.last_name %></h2>
+    <p><strong>Based in:</strong> <%= current_user.location %></p>
+    <p class="bio"><em><%= current_user.bio %></em></p>
+    <div class="follow-button">
+      <button class="btn btn-secondary">Follow</button> <!-- Display-only Follow button -->
+    </div>
   </div>
 </div>
+
+<!-- Food Preferences and Dietary Restrictions -->
+<div class="preferences-section">
+  <h4>Food Preferences:</h4>
+  <p><%= current_user.food_preferences.present? ? current_user.food_preferences : "Not provided" %></p>
+  <h4>Dietary Restrictions:</h4>
+  <p><%= current_user.dietary_restrictions.present? ? current_user.dietary_restrictions : "Not provided" %></p>
+</div>
+
+<!-- Followers and Following Section -->
+<div class="followers-section text-center">
+  <span class="followers">Followers: <strong>123</strong></span>
+  <span class="following">Following: <strong>56</strong></span>
+</div>
+
+<!-- Recommendations and Wishlist Stats -->
 <div class="stats-container">
-  <!-- <div><p style="font-weight: bolder;">STATS</p></div> -->
   <div class="row">
     <div class="first-stat col">
-      <p> <%= current_user.recommendations.count %></p>
+      <p><%= current_user.recommendations.count %></p>
       <p style="font-size: 12px; font-weight: bold;">RECOMMENDATIONS</p>
     </div>
     <div class="second-stat col">
@@ -27,17 +53,21 @@
     </div>
   </div>
 </div>
+
+<!-- Recommendations by City Section -->
 <div class="recommendations-container">
   <div class="row">
     <h5>MY RECOMMENDATIONS</h5>
   </div>
+
   <% recs = current_user.recommendations %>
-  <% sorted_recs = recs.group_by{ |rec| rec.restaurant.city } %>
+  <% sorted_recs = recs.group_by { |rec| rec.restaurant.city } %>
+
   <div class="profile-row">
     <% sorted_recs.each do |city, recs| %>
-      <div class="profile-card" >
+      <div class="profile-card">
         <% response = pexels.photos.search(city, per_page: 1) %>
-        <img src="<%= response.photos[0].src["original"] %>" class="card-img-top" alt="<%= city %>">
+        <img src="<%= response.photos[0].src['original'] %>" class="card-img-top" alt="<%= city %>">
         <div class="card-body">
           <%= form_with url: recs_path, method: :get, class: "d-flex" do %>
             <%= hidden_field_tag :city, city %>
@@ -48,10 +78,15 @@
     <% end %>
   </div>
 </div>
-</div>
+
+<!-- No Recommendations Message -->
 <% if recs.empty? %>
-  <p style="text-align: center; color: #4d4d4d;"> <em>No recommendations yet. </em></p>
+  <p style="text-align: center; color: #4d4d4d;">
+    <em>No recommendations yet.</em>
+  </p>
 <% end %>
 
-
-
+<!-- Wishlist Button -->
+<div class="wishlist-button text-center">
+  <%= link_to "Go to Wishlist", wishlist_path, class: "btn btn-primary" %>
+</div>
