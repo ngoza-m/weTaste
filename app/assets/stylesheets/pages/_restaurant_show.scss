@@ -122,3 +122,10 @@ h2 {
   margin-bottom: 12px;
   text-align:center;
 }
+
+.restaurant-show {
+  
+  .with-overlay::before {
+    background-color: rgba(0, 0, 0, 0.251);
+  }
+}

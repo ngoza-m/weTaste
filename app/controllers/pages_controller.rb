@@ -24,7 +24,7 @@ class PagesController < ApplicationController
   end
 
   def wishlist
-    @wishlisted_restaurants = current_user.restaurants
+    @wishlisted_restaurants = current_user.wishlists
   end
 
   def city_search
