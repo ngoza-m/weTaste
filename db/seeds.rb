@@ -204,12 +204,12 @@ Restaurant.create([
     city: "Rome"
   },
   {
-    name: "Line Brew Astana",
-    location: "Kenesary St 20, Astana 010000",
-    url: "https://www.hotelartemide.it/",
-    photos: "https://lh3.googleusercontent.com/p/AF1QipMfHY02yGTP153sDaSsO3pBfth48LmBunki_WpH=s1360-w1360-h1020",
+    name: "Life Ristorante",
+    location: "KVia della Vite, 28, 00187",
+    url: "https://www.ristorantelife.com/",
+    photos: "https://lh3.googleusercontent.com/p/AF1QipOfcczrElWBAOIUoAgnVuo2M9-XY_KxBFhQt2Xn=s1360-w1360-h1020",
     phone_number: "+39 06 4899 1763",
-    city: "Astana"
+    city: "Rome"
   }
 
 ])
