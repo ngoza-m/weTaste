@@ -21,9 +21,9 @@ Restaurant.destroy_all
 puts "Creating new restaurants"
 restaurants_data = [
 
-   {
-  # 1
-   name: "Franggo De Pijp",
+  {
+    # 1
+    name: "Franggo De Pijp",
     location: "Eerste Sweelinckstraat 9h",
     city: "Amsterdam",
     phone_number: "+31 203 031 046",
@@ -33,13 +33,13 @@ restaurants_data = [
   },
   {
     # 2
-    name: "Dignita Vondelpark",
-    location: "Koninginneweg 218",
+    name: "Benji's Oost",
+    location: "Wibautstraat 196",
     city: "Amsterdam",
-    phone_number: "+31 220 221 458",
-    url: "https://eatwelldogood.nl",
-    photos: "https://lh3.googleusercontent.com/p/AF1QipOM2_wNVX7GrxlaVqYGekaNbvZdwGtGhxN69ow=s1360-w1360-h1020",
-    category: "Sustainable"
+    phone_number: "+31 202 238 787",
+    url: "https://www.benjis.amsterdam",
+    photos: "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/19/cf/22/05/benji-s-east.jpg?w=1400&h=-1&s=1",
+    category: "Breakfast"
   },
   {
     # 3
@@ -53,23 +53,23 @@ restaurants_data = [
   },
   {
     # 4
-    name: "Benji's Oost",
-    location: "Wibautstraat 196",
+    name: "Vegan Junk Food Bar",
+    location: "Marie Heinekenplein 9",
     city: "Amsterdam",
-    phone_number: "+31 202 238 787",
-    url: "https://www.benjis.amsterdam",
-    photos: "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/19/cf/22/05/benji-s-east.jpg?w=1400&h=-1&s=1",
-    category: "Breakfast"
+    phone_number: "+31 6 18 95 50 02",
+    url: "https://www.veganjunkfoodbar.com",
+    photos: "https://lh3.googleusercontent.com/p/AF1QipOQJXSR7IuOO4aCcps3pSy_sz2yvaeY7TakjA9Q=s1360-w1360-h1020",
+    category: "Vegetarian"
   },
   {
     # 5
-    name: "Ciel Bleu",
-    location: "Ferdinand Bolstraat 333",
+    name: "Dignita Vondelpark",
+    location: "Koninginneweg 218",
     city: "Amsterdam",
-    phone_number: "+31 206 787 450",
-    url: "https://www.cielbleu.nl",
-    photos: "https://lh3.googleusercontent.com/p/AF1QipM3slhyjQN0j0nLqkbkNfqnO7vG8asWPWOMPY6D=s1360-w1360-h1020",
-    category: "Fine Dining"
+    phone_number: "+31 220 221 458",
+    url: "https://eatwelldogood.nl",
+    photos: "https://lh3.googleusercontent.com/p/AF1QipOM2_wNVX7GrxlaVqYGekaNbvZdwGtGhxN69ow=s1360-w1360-h1020",
+    category: "Sustainable"
   },
   {
     # 6
@@ -83,7 +83,17 @@ restaurants_data = [
   },
   {
     # 7
-    name: "YamYam Trattoria Pizzeria",
+    name: "Ciel Bleu",
+    location: "Ferdinand Bolstraat 333",
+    city: "Amsterdam",
+    phone_number: "+31 206 787 450",
+    url: "https://www.cielbleu.nl",
+    photos: "https://lh3.googleusercontent.com/p/AF1QipM3slhyjQN0j0nLqkbkNfqnO7vG8asWPWOMPY6D=s1360-w1360-h1020",
+    category: "Fine Dining"
+  },
+  {
+    # 8
+    name: "YamYam Trattoria",
     location: "Frederik Hendrikstraat 88 - 90",
     city: "Amsterdam",
     phone_number: "+31 206 815 097",
@@ -92,7 +102,7 @@ restaurants_data = [
     category: "Italian"
   },
   {
-    # 8
+    # 9
     name: "De Plantage",
     location: "Plantage Kerklaan 36",
     city: "Amsterdam",
@@ -100,16 +110,6 @@ restaurants_data = [
     url: "https://www.caferestaurantdeplantage.nl",
     photos: "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0f/53/f7/91/photo2jpg.jpg?w=600&h=-1&s=1",
     category: "Breakfast"
-  },
-  {
-    # 9
-    name: "Vegan Junk Food Bar",
-    location: "Marie Heinekenplein 9",
-    city: "Amsterdam",
-    phone_number: "+31 6 18 95 50 02",
-    url: "https://www.veganjunkfoodbar.com",
-    photos: "https://lh3.googleusercontent.com/p/AF1QipOQJXSR7IuOO4aCcps3pSy_sz2yvaeY7TakjA9Q=s1360-w1360-h1020",
-    category: "Vegetarian"
   },
   {
     # 10
@@ -122,8 +122,8 @@ restaurants_data = [
     category: "Bar"
   },
   {
-    #1 1
-    name: "SUGARBAR by Tudy's Kitchen",
+    #11
+    name: "SUGARBAR",
     location: "De Clercqstraat 48",
     city: "Amsterdam",
     url: "https://www.tudyssugarbar.com",
@@ -137,7 +137,7 @@ restaurants_data = [
     city: "Amsterdam",
     phone_number: "+31 657 736 955",
     url: "https://www.donarestaurant.com",
-    photos: "https://lh3.googleusercontent.com/p/AF1QipNCTwqUxbxCUeM6tMhIOYy6io3EQYgalCJd2krf=s1360-w1360-h1020",
+    photos: "https://lh3.googleusercontent.com/p/AF1QipMDmwvRGc2EXLtzJoIchZhl4iRu4pp2_tbMkwIq=s1360-w1360-h1020",
     category: "Fine Dining"
   },
   {
@@ -150,26 +150,38 @@ restaurants_data = [
     photos: "https://lh3.googleusercontent.com/p/AF1QipPoRBdFIHQpnbXSBm0t2jMwgHMLFb15sgrjBA87=s1360-w1360-h1020",
     category: "Coffee"
   },
-
   {
+    # 14
     name: "Poppy's Amsterdam",
     location: "Lutmastraat 99",
-    url: "https://www.poppysamsterdam.nl/",
     city: "Amsterdam",
+    phone_number: "+31 203 418 799",
+    url: "https://www.poppysamsterdam.nl/",
     photos: "https://lh3.googleusercontent.com/p/AF1QipO7XhpOOssy3fPKN1glqrLcT8Wg4rbYkFoG38xp=s1360-w1360-h1020",
-    phone_number: "020 341 8799",
-   category: "Vegetarian"
+    category: "Vegetarian"
   },
   {
+    # 15
     name: "Bakery Louf",
-    location:"Bilderdijkstraat 38",
+    location: "Bilderdijkstraat 38",
+    city: "Amsterdam",
+    phone_number: "",
     url: "https://www.bakkerijlouf.nl",
     photos: "https://static.wixstatic.com/media/3d7e86_2ad870beac8848a1b1677c0a7b1851f2~mv2.jpg/v1/crop/x_0,y_0,w_1800,h_1211/fill/w_1688,h_1136,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/loof_1%2C5x.jpg",
-    city: "Amsterdam"
-  }
+    category: "Bakery"
+  },
+  {
+    # 16
+    name: "Café Binnenvisser",
+    location: "Bilderdijkstraat 36",
+    city: "Amsterdam",
+    phone_number: "+31 202 210 503",
+    url: "https://binnenvisser.nl",
+    photos:"https://lh3.googleusercontent.com/p/AF1QipN_wosT8J9w3NBUCbraTWBxgSelHSQUhFwK099I=s1360-w1360-h1020",
+    category:"Sustainable"
+  },
 
-
-  ]
+]
 
   restaurants_data.each do |restaurant_data|
     Restaurant.create(restaurant_data)
@@ -184,37 +196,39 @@ puts "Created #{Restaurant.count} restaurants"
 #   restaurant.update(city: "Amsterdam")
 # end
 
-puts "creating rome restaurants"
+# puts "creating rome restaurants"
 
-Restaurant.create([
-  {
-    name: "Tonnarello",
-    location: "V. della Paglia, 1/2/3, 00153 Roma ",
-    url: "https://tonnarello.it",
-    photos: "https://lh3.googleusercontent.com/p/AF1QipPWybJzUIA35eC9qreEEOakdhEuRYmJnFNAI0Lo=s1360-w1360-h1020",
-    phone_number: "",
-    city: "Rome"
-  },
-  {
-    name: "Ambrosia Rooftop Restaurant & Bar",
-    location: "V. della Paglia, 1/2/3, 00153 Roma ",
-    url: "https://www.hotelartemide.it/",
-    photos: "https://lh3.googleusercontent.com/p/AF1QipMfHY02yGTP153sDaSsO3pBfth48LmBunki_WpH=s1360-w1360-h1020",
-    phone_number: "+39 06 4899 1763",
-    city: "Rome"
-  },
-  {
-    name: "Life Ristorante",
-    location: "KVia della Vite, 28, 00187",
-    url: "https://www.ristorantelife.com/",
-    photos: "https://lh3.googleusercontent.com/p/AF1QipOfcczrElWBAOIUoAgnVuo2M9-XY_KxBFhQt2Xn=s1360-w1360-h1020",
-    phone_number: "+39 06 4899 1763",
-    city: "Rome"
-  }
+# Restaurant.create([
+#     {
+#     name: "Tonnarello",
+#     location: "Via della Paglia, 1/2/3",
+#     city: "Rome",
+#     phone_number: "",
+#     url: "https://tonnarello.it",
+#     photos: "https://lh3.googleusercontent.com/p/AF1QipPWybJzUIA35eC9qreEEOakdhEuRYmJnFNAI0Lo=s1360-w1360-h1020",
+#     category: "Italian"
+#   },
+#   {
+#     name: "Bar Mariani",
+#     location: "Via dei Pettinari, 44",
+#     city: "Rome",
+#     phone_number: "+39 06 687 5286",
+#     url: "",
+#     photos: "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/10/c0/3b/93/img-20170923-114506-826.jpg?w=700&h=-1&s=1",
+#     category: "Coffee"
+#   },
+#   {
+#     name: "Life Ristorante",
+#     location: "KVia della Vite, 28, 00187",
+#     url: "https://www.ristorantelife.com/",
+#     photos: "https://lh3.googleusercontent.com/p/AF1QipOfcczrElWBAOIUoAgnVuo2M9-XY_KxBFhQt2Xn=s1360-w1360-h1020",
+#     phone_number: "+39 06 4899 1763",
+#     city: "Rome"
+#   }
 
-])
+# ])
 
-puts "Created #{Restaurant.count} restaurants"
+# puts "Created #{Restaurant.count} restaurants"
 
 
 #   puts "Destroying old recommendations"
