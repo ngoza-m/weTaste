@@ -11,8 +11,8 @@
 
 <% @recommendations.each do |recommendation| %>
     <div class="recommendation-card">
-        <% if current_user.photo.attached? %>
-           <div> <%= image_tag current_user.photo %> </div>
+        <% if @user.photo.attached? %>
+           <div> <%= image_tag @user.photo %> </div>
         <% end %>
         <div class="recommendation-content">
             <p style="font-weight: bold; color: #6A497A"> <%= recommendation.user.first_name %> <%= recommendation.user.last_name %> </p>
