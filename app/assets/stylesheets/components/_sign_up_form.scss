@@ -1,0 +1,36 @@
+
+.devise-form {
+    max-width: 600px;  // Limit the width of the form
+    padding: 20px;     // Add padding inside the form container
+    margin: 40px auto; // Center the container and add top/bottom margin
+    background-color: #f8f9fa; // Light background color
+    border: 1px solid #ccc;     // Border around the form container
+    border-radius: 8px;         // Rounded corners
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); // Add a subtle shadow
+
+
+  // Styling for h1
+    h2 {
+    text-align: center !important;
+    font-size: 22px;
+    margin-bottom: 24px;
+    // color: $ink;
+    // font-family: $headers-font;
+    font-weight: bold;
+    }
+
+    .btn {
+            color: white;
+            background-color: #f06C6C;
+
+        }
+
+    a {
+        color: $plum;
+        text-decoration: none;
+    }
+
+    a:hover {
+        color: darken($plum, 10%);
+    }
+}

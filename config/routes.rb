@@ -15,6 +15,7 @@ Rails.application.routes.draw do
   get "recs", to: "pages#recommendationsbycity"
   get "nearby", to: "restaurants#nearby"
   get "search", to: "pages#city_search"
+  get "restaurants_by_category", to: "pages#restaurants_by_category"
 
   resources :restaurants, only: [:new, :index, :show] do
     resources :recommendations, only: [:index, :create, :new]

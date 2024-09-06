@@ -4,19 +4,20 @@ class PagesController < ApplicationController
   def home
     @restaurants = Restaurant.all
     @categories = [
-      { emoji: '🥐', title: 'BREAKFAST', link: '/' },
-      { emoji: '🥗', title: 'LUNCH', link: '/' },
-      { emoji: '🍕', title: 'QUICK-BITES', link: '/' },
-      { emoji: '🍴', title: 'FINE-DINING', link: '/' },
-      { emoji: '🥦', title: 'VEGETARIAN', link: '/' },
-      { emoji: '🍰', title: 'DESSERT', link: '/' },
-      { emoji: '🍸', title: 'BAR', link: '/' },
-      { emoji: '🍔', title: 'CASUAL', link: '/' },
-      { emoji: '🍝', title: 'ITALIAN', link: '/' },
-      { emoji: '🥖', title: 'FRENCH', link: '/' },
-      { emoji: '🧀', title: 'GOURMET', link: '/' },
-      { emoji: '🍽️', title: 'DINNER', link: '/' }
+      { emoji: '🥐', title: 'Breakfast', link: '/' },
+      { emoji: '🍴', title: 'Fine Dining', link: '/' },
+      { emoji: '🥦', title: 'Vegetarian', link: '/' },
+      { emoji: '🥗', title: 'Lunch', link: '/' },
+      { emoji: '🍕', title: 'Quick Bites', link: '/' },
+      { emoji: '🍰', title: 'Dessert', link: '/' },
+      { emoji: '🍸', title: 'Bar', link: '/' },
+      { emoji: '🍔', title: 'Casual', link: '/' },
+      { emoji: '🍝', title: 'Italian', link: '/' },
+      { emoji: '🥖', title: 'French', link: '/' },
+      { emoji: '🧀', title: 'Gourmet', link: '/' },
+      { emoji: '🍽️', title: 'Dinner', link: '/' }
     ]
+  
   end
 
   def profile
@@ -37,5 +38,11 @@ class PagesController < ApplicationController
     @recs = current_user.recommendations
     @sorted_recs = @recs.group_by{ |rec| rec.restaurant.city }
     @sorted_recs_by_city = @sorted_recs[params[:city]]
+  end
+
+  def restaurants_by_category 
+    @restaurants = Restaurant.all
+    @category = params[:category]
+    @restaurants_by_category = @restaurants.select { |restaurant| restaurant.category == @category }
   end
 end

@@ -9,10 +9,17 @@
 <div class="container scrollable-section">
   <div class="scrollable-wrapper mt-4">
     <% @categories.each do |category| %>
-      <div class="category-item mb-0">
-        <span class="emoji" style="margin-right: 5px;"><%= category[:emoji] %></span>
-        <span class="title"><%= category[:title] %></span>
-      </div>
+        <div class="category-item mb-0">
+          <span class="emoji" style="margin-right: 5px;"><%= category[:emoji] %></span>
+          <!-- <span class="title"><%= category[:title] %></span> -->
+
+          <%= form_with url: restaurants_by_category_path, method: :get, class: "title" do %>
+            <%= hidden_field_tag :category, category[:title] %>
+            <%= submit_tag category[:title], name: "" %>
+          <% end %>
+        </div>
+
+      
     <% end %>
   </div>
 </div>
