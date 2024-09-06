@@ -7,7 +7,6 @@ class RecommendationsController < ApplicationController
   def create
     @restaurant = Restaurant.find(params[:restaurant_id])
     @recommendation = Recommendation.new(recommendation_params)
-    @recommendation.save
     @recommendation.tag_list.add(params[:recommendation][:tag_list], parse: true)
     
     @recommendation.restaurant = @restaurant
