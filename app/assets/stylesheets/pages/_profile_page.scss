@@ -24,6 +24,11 @@
 
 .profile-avatar {
   margin-right: 20px;
+
+  img {
+    height: 130px;
+    object-fit: cover;
+  }
 }
 
 .profile-pic {
