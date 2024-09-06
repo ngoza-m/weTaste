@@ -1,8 +1,24 @@
-/* Profile Page Styles */
+/* Dropdown and Profile Picture */
+.dropdown-toggle {
+  background-color: $canvas;
+  border: none;
+}
+
+.dropdown-menu {
+  background-color: $blush;
+  border-radius: 10px;
+}
+
+.dropdown-item {
+  color: white !important;
+  font-size: 14px;
+}
+
+/* Profile Header Section */
 .profile-header {
   display: flex;
-  align-items: center;
-  padding: 20px;
+  align-items: flex-start;
+  padding: 0 20px;
   text-align: left;
 }
 
@@ -12,7 +28,7 @@
 
 .profile-pic {
   border-radius: 50%;
-  border: 3px solid #FFD131; /* Or any highlight color you prefer */
+  border: 3px solid $sunshine;
 }
 
 .profile-info {
@@ -23,13 +39,15 @@
   font-family: $headers-font;
   font-size: 22px;
   margin-bottom: 5px;
+  margin: 0;
 }
 
 .profile-info p {
   font-family: $body-font;
-  color: #666;
+  color: $ink;
   font-size: 14px;
   margin-bottom: 8px;
+  margin: 5px 0;
 }
 
 .follow-button {
@@ -37,27 +55,109 @@
 }
 
 .follow-button .btn {
-  background-color: #FFD131;
-  color: black;
+  background-color: $sunshine;
+  color: $ink;
   border: none;
-  padding: 10px 20px;
+  padding: 4px 80px;
   border-radius: 5px;
-}
-
-.preferences-section {
-  padding: 20px;
-  background-color: #f9f9f9;
-  margin-top: 20px;
-  border-radius: 10px;
-}
-
-.preferences-section h4 {
-  font-family: $headers-font;
-  color: #333;
-}
-
-.preferences-section p {
-  font-family: $body-font;
-  color: #666;
   font-size: 14px;
+  font-family: $headers-font;
+  font-weight: bold;
+  height: auto;
+}
+
+/* Recommendations Container */
+.recommendations-container {
+  padding-left: 25px;
+  padding-right: 25px;
+  margin-top: 10px;
+}
+
+.profile-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  justify-content: space-between;
+}
+
+.profile-card {
+  width: 48%; /* Each card takes half of the available space */
+  background-color: #f9f9f9;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* City Image and Title Styling */
+.city-card-img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+.city-card-title {
+  padding: 10px;
+  font-family: $headers-font;
+  text-align: center;
+  font-size: 16px;
+  font-weight: 400;
+  color: white;
+  background-color: rgba($plum, 0.7); /* Apply $plum with 50% opacity */
+  border-radius: 0 0 10px 10px; /* Rounded corners at the bottom */
+}
+
+.city-card-title a {
+  text-decoration: none; /* Removes the underline from the link */
+  color: white; /* Sets the text color to white */
+}
+
+/* Followers and Profile Details */
+.followers {
+  font-family: $headers-font;
+  font-weight: bold;
+  font-size: 16px;
+  color: $ink;
+  padding-left: 20px;
+  margin-top: 20px;
+  margin-bottom: 5px;
+}
+
+.food-preferences, .dietary-restrictions {
+  font-family: $body-font;
+  font-size: 12px;
+  color: $ink;
+  opacity: 0.5;
+  padding-left: 20px;
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+
+/* Bio Section */
+.bio-section {
+  padding: 0px 20px;
+}
+
+.bio-section .bio {
+  font-family: $body-font;
+  color: $ink;
+  font-size: 14px;
+  font-style: italic;
+  margin-top: 0px;
+  margin-bottom: 20px;
+}
+
+/* Recommendations Title */
+.recommendations-title {
+  font-family: $headers-font;
+  font-size: 18px;
+  color: $ink;
+  padding-bottom: 10px;
+  padding-left: 10px;
+  margin-bottom: 15px;
+  margin-top: 15px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.profile-card a {
+  text-decoration: none;
 }
